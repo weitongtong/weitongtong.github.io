@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css"><link rel="stylesheet" href="/custom/css/index.css"><div class="container"><header> 我是首页： <a href="/">blog</a> <a href="/demo">demo</a></header><div class="content"> 主人很懒，什么都没留下。。。</div><div class="btn-next-box"><i class="fa fa-chevron-circle-right btn-next" onclick="nextImg()" aria-hidden="true"></i></div></div><script>
+  var d = 0, wait = false
+  var width = document.body.offsetWidth, height = document.body.offsetHeight
+  var imgController = {
+    timeout: null,
+    init: function() {
+      this.nextImg()
+    },
+    nextImg: function() {
+      if (wait) {
+        return
+      }
+      wait = true
+      document.querySelector('.btn-next').style.cursor = 'wait'
+      var img = new Image()
+      // x 参数只是为了让 url 发生变化
+      img.src = `https://bing.ioliu.cn/v1/rand?w=${width}&h=${height}&x=${d++}`
+      img.onload = function() {
+        document.querySelector('.container').style.background = `url(${img.src}) center center/cover no-repeat`
+        document.querySelector('.btn-next').style.cursor = `pointer`
+        wait = false
+      }
+      img.onerror = function() {
+        alert('背景图片挂了')
+        document.querySelector('.btn-next').style.cursor = `pointer`
+        wait = false
+      }
+    },
+    loop: function(time) {
+      if (time < 5000) {
+        console.log('时间间隔需大于5s')
+        return
+      }
+      this.stop()
+      this.timeout = setInterval(this.nextImg, time || 30000)
+    },
+    stop: function() {
+      if (this.timeout) {
+        window.clearInterval(this.timeout)
+      }
+    }
+  }
+  imgController.init()
+  window.nextImg = imgController.nextImg
+  window.loop = imgController.loop
+  window.stop = imgController.stop
+
+  console.log('--------------------------')
+  console.log('loop() 图片30s自动更新')
+  console.log('stop() 图片停止自动更新')
+  console.log('--------------------------')
+</script>
