@@ -1,4 +1,104 @@
-<!doctype html><html class="theme-next mist use-motion" lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css"><meta name="keywords" content="en, EN, En, wtt, blog"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0"><meta name="description" content="TypeScript 的定位是做静态类型语言，而 Flow 的定位是类型检查器。TypeScript 是 JavaScript 的超集，就是在 JavaScript 上做了一层封装，封装出 TypeScript 的特性，当然最终代码可以编译为 JavaScript。 demo.ts123456let num: numbernum = &apos;linkFly&apos; // 会报错const fetch = fu"><meta property="og:type" content="article"><meta property="og:title" content="TypeScript入门"><meta property="og:url" content="http://yoursite.com/2017/10/12/TypeScript入门/index.html"><meta property="og:site_name" content="Output"><meta property="og:description" content="TypeScript 的定位是做静态类型语言，而 Flow 的定位是类型检查器。TypeScript 是 JavaScript 的超集，就是在 JavaScript 上做了一层封装，封装出 TypeScript 的特性，当然最终代码可以编译为 JavaScript。 demo.ts123456let num: numbernum = &apos;linkFly&apos; // 会报错const fetch = fu"><meta property="og:locale" content="zh-Hans"><meta property="og:updated_time" content="2017-10-12T15:21:33.000Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="TypeScript入门"><meta name="twitter:description" content="TypeScript 的定位是做静态类型语言，而 Flow 的定位是类型检查器。TypeScript 是 JavaScript 的超集，就是在 JavaScript 上做了一层封装，封装出 TypeScript 的特性，当然最终代码可以编译为 JavaScript。 demo.ts123456let num: numbernum = &apos;linkFly&apos; // 会报错const fetch = fu"><script type="text/javascript" id="hexo.configurations">
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="en, EN, En, wtt, blog" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="TypeScript 的定位是做静态类型语言，而 Flow 的定位是类型检查器。TypeScript 是 JavaScript 的超集，就是在 JavaScript 上做了一层封装，封装出 TypeScript 的特性，当然最终代码可以编译为 JavaScript。 demo.ts123456let num: numbernum = &apos;linkFly&apos; // 会报错const fetch = fu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TypeScript入门">
+<meta property="og:url" content="http://yoursite.com/2017/10/12/TypeScript入门/index.html">
+<meta property="og:site_name" content="Output">
+<meta property="og:description" content="TypeScript 的定位是做静态类型语言，而 Flow 的定位是类型检查器。TypeScript 是 JavaScript 的超集，就是在 JavaScript 上做了一层封装，封装出 TypeScript 的特性，当然最终代码可以编译为 JavaScript。 demo.ts123456let num: numbernum = &apos;linkFly&apos; // 会报错const fetch = fu">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-12T15:21:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TypeScript入门">
+<meta name="twitter:description" content="TypeScript 的定位是做静态类型语言，而 Flow 的定位是类型检查器。TypeScript 是 JavaScript 的超集，就是在 JavaScript 上做了一层封装，封装出 TypeScript 的特性，当然最终代码可以编译为 JavaScript。 demo.ts123456let num: numbernum = &apos;linkFly&apos; // 会报错const fetch = fu">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
@@ -18,7 +118,18 @@
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
-</script><link rel="canonical" href="http://yoursite.com/2017/10/12/TypeScript入门/"><title> TypeScript入门 | Output</title><style>
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/12/TypeScript入门/"/>
+
+
+
+
+
+  <title> TypeScript入门 | Output </title>
+  <style>
     #particles-js{
       width: 100%;
       height: 100%;
@@ -30,11 +141,536 @@
       left: 0;
       z-index: -1;
     }
-  </style></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container one-collumn sidebar-position-left page-post-detail"><div id="particles-js"></div><div class="headband"></div> <a href="https://github.com/weitongtong"><img style="position: absolute; top: 0; right: 0; border: 0" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Output</span><span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle">output</p></div><div class="site-nav-toggle"> <button><span class="btn-bar"></span><span class="btn-bar"></span><span class="btn-bar"></span></button></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/custom" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br> 首页</a></li><li class="menu-item menu-item-about"><a href="/custom" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br> 关于</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br> 归档</a></li><li class="menu-item menu-item-gitbook"><a href="/gitbook" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i><br> gitbook</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br> 搜索</a></li></ul><div class="site-search"><div class="popup"><span class="search-icon fa fa-search"></span> <input type="text" id="local-search-input"><div id="local-search-result"></div><span class="popup-btn-close"><i class="fa fa-times" style="font-size: 18px; margin-top: 10px" aria-hidden="true"></i></span></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/12/TypeScript入门/"><span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="weitongtong"><meta itemprop="description" content=""><meta itemprop="image" content="/images/tx.png"></span><span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Output"> <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject"><img style="display:none" itemprop="url image" alt="Output" src=""></span></span><header class="post-header"><h1 class="post-title" itemprop="name headline"> TypeScript入门</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-12T16:47:46+08:00">2017-10-12</time></span></div></header><div class="post-body" itemprop="articleBody"><p>TypeScript 的定位是做静态类型语言，而 Flow 的定位是类型检查器。<br>TypeScript 是 JavaScript 的超集，就是在 JavaScript 上做了一层封装，封装出 TypeScript 的特性，当然最终代码可以编译为 JavaScript。</p><p>demo.ts<br></p><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> num: <span class="built_in">number</span></div><div class="line">num = <span class="string">'linkFly'</span> <span class="comment">// 会报错</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> fetch = <span class="function"><span class="keyword">function</span>(<span class="params">url: <span class="built_in">string</span></span>): <span class="title">Promise</span> </span>&#123;</div><div class="line">&#125;</div><div class="line"><span class="comment">// fetch() 函数接收一个 string 类型的参数 url，返回一个 Promise。</span></div></pre></td></tr></table></figure><p></p><a id="more"></a><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> fetch = <span class="function"><span class="keyword">function</span> (<span class="params">url: <span class="built_in">string</span> | object, params?: <span class="built_in">any</span>, user?: User</span>): <span class="title">Promise</span>&lt;<span class="title">object</span> | <span class="title">Error</span>&gt; </span>&#123;</div><div class="line">  <span class="comment">// dosomething</span></div><div class="line"></div><div class="line">  <span class="keyword">return</span> http(options).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> data</div><div class="line">  &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> err</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>这个 TypeScript 包含了很多信息：</p><ol><li>url 可能是 string 或 object 类型</li><li>params 是可以不传的，也可以传递任何类型</li><li>user 要求是 User 类型的，当然也是可以不传</li><li>返回了一个 Promise，Promise 的求值结果可能是 object，也有可能是 Error</li></ol><p>看到上面的信息后，我们大概知道可以这么调用并处理 fetch 的返回结果：<br></p><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> result = <span class="keyword">await</span> fetch(<span class="string">'https://tasaid.com'</span>, &#123; id: <span class="number">1</span> &#125;)</div><div class="line"></div><div class="line"><span class="comment">// fetch 可能会返回 Error</span></div><div class="line"><span class="keyword">if</span> (result <span class="keyword">instanceof</span> <span class="built_in">Error</span>) &#123;</div><div class="line">  <span class="comment">// 错误处理</span></div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p><p>这就是静态数据类型的意义。静态类型在越复杂的应用中，需求越强烈。<br>这是 react 对于数据类型的约束：<br></p><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> PropTypes <span class="keyword">from</span> <span class="string">'prop-types'</span></div><div class="line"></div><div class="line">component.propTypes = &#123;</div><div class="line">  optionalArray: PropTypes.array,</div><div class="line">  optionalBool: PropTypes.bool,</div><div class="line">  optionalFunc: PropTypes.func,</div><div class="line">  requiredFunc: PropTypes.func.isRequired,</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p><p>这是 vue 对于数据类型的约束：<br></p><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Vue.component(<span class="string">'component'</span>, &#123;</div><div class="line">  props: &#123;</div><div class="line">    optionalArray: <span class="built_in">Array</span>,</div><div class="line">    optionalBool: <span class="built_in">Boolean</span>,</div><div class="line">    optionalFunc: <span class="built_in">Function</span>,</div><div class="line">    requiredFunc: &#123;</div><div class="line">      <span class="keyword">type</span>: <span class="built_in">Function</span>,</div><div class="line">      required: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure><p></p><p>而引入了 TypeScript 之后，就会感受到真正流畅的数据类型约束：<br></p><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Component &#123;</div><div class="line">  optionalArray?: <span class="built_in">Array</span>&lt;<span class="built_in">string</span>&gt; <span class="comment">// string 类型的 数组</span></div><div class="line">  optionalBool?: <span class="built_in">boolean</span> <span class="comment">// 写上 ? 号，就表示着这个属性可能为空</span></div><div class="line">  optionalFunc?: <span class="function">(<span class="params">foo: <span class="built_in">string</span>, bar: <span class="built_in">number</span></span>) =&gt;</span> <span class="built_in">boolean</span> <span class="comment">// 函数的参数，返回值都一目了然</span></div><div class="line">  requiredFunc: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">void</span> </div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p><p>小tips：</p><ul><li>使用 visual studio code 编辑器会体验到 TypeScript 强大的类型推导，毕竟两个都是微软亲儿子。</li><li>一些 JavaScript 编写的大型的第三方库，都提供了 TypeScript 的类型声明文件（<code>*.d.ts</code> 文件）, 一般都放在包目录的 types 文件夹中。或者在 <code>@didi/*</code> 仓库名下可以找到。</li><li>babel 是将高级版本的 JavaScript 编译为目标版本的 JavaScript，TypeScript 是将 TypeScript 编译为目标版本的 JavaScript。它们的编译是重叠的，也就是说 TypeScript 可以不再依赖 babel 编译。</li></ul><h4 id="基础类型"><a href="#基础类型" class="headerlink" title="基础类型"></a>基础类型</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a: <span class="built_in">number</span></div><div class="line"><span class="keyword">let</span> b = <span class="literal">true</span> <span class="comment">// 有默认值的情况，甚至不需要声明类型，ts 会自动推导</span></div><div class="line"><span class="keyword">let</span> c: [<span class="built_in">string</span>, <span class="built_in">number</span>] <span class="comment">// 元组</span></div><div class="line"><span class="keyword">enum</span> Color &#123; Red, Green, Blue &#125; <span class="comment">// 枚举</span></div><div class="line"><span class="keyword">let</span> d: &#123; name: <span class="built_in">String</span> &#125; = &#123; name: <span class="string">'Bob'</span> &#125;</div></pre></td></tr></table></figure><h4 id="复杂类型"><a href="#复杂类型" class="headerlink" title="复杂类型"></a>复杂类型</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// array</span></div><div class="line"><span class="keyword">let</span> list_a: <span class="built_in">number</span>[] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line"><span class="keyword">let</span> list_b: <span class="built_in">Array</span>&lt;<span class="built_in">number</span>&gt; = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="comment">// number 类型的数组</span></div><div class="line"><span class="keyword">let</span> list_c: [<span class="built_in">string</span>, <span class="built_in">number</span>] = [<span class="string">'Bob'</span>, <span class="number">0</span>]</div><div class="line"></div><div class="line"><span class="comment">// any</span></div><div class="line"><span class="keyword">let</span> notSure: <span class="built_in">any</span> = <span class="number">4</span></div><div class="line">notSure = <span class="literal">true</span> <span class="comment">// any 类型可以自由赋值</span></div><div class="line"></div><div class="line"><span class="comment">// 函数类型</span></div><div class="line"><span class="keyword">let</span> fn: <span class="function">(<span class="params">id: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">number</span> = <span class="function">(<span class="params">id</span>) =&gt;</span> <span class="number">1</span></div><div class="line"><span class="comment">// 这里使用了 ECMAScript 6 的箭头函数，与下面的等价</span></div><div class="line"><span class="keyword">let</span> fn: <span class="function">(<span class="params">id: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">number</span> = <span class="function"><span class="keyword">function</span>(<span class="params">id</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="number">1</span></div><div class="line">&#125;</div></pre></td></tr></table></figure><h4 id="高级类型"><a href="#高级类型" class="headerlink" title="高级类型"></a>高级类型</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 联合类型，foo 是 string 或 number</span></div><div class="line"><span class="keyword">let</span> foo: <span class="built_in">string</span> | <span class="built_in">number</span></div><div class="line"></div><div class="line"><span class="comment">// 类型断言，强制使用兼容类型中的某一类型</span></div><div class="line">(foo <span class="keyword">as</span> <span class="built_in">string</span>)</div><div class="line"></div><div class="line"><span class="comment">// 类型保护（判断）</span></div><div class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> foo === <span class="string">'string'</span>) &#123;</div><div class="line">  <span class="comment">// dosomething</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 类型保护（判断）</span></div><div class="line"><span class="keyword">if</span> (foo <span class="keyword">instanceof</span> <span class="built_in">String</span>) &#123;</div><div class="line">  <span class="comment">// dosomething</span></div><div class="line">&#125;</div></pre></td></tr></table></figure><h4 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> user: &#123; id: <span class="built_in">number</span>, name: <span class="built_in">string</span> &#125; = &#123; id: <span class="number">1</span>, name: <span class="string">'Bob'</span> &#125;</div></pre></td></tr></table></figure><h4 id="Class类"><a href="#Class类" class="headerlink" title="Class类"></a>Class类</h4><p>所有类型的根本都是类。</p><blockquote><p>注意，TS 中类型是核心，当你想把一个项目从 JavaScript 迁移到 TypeScript 的时候，需要为项目中补充大量的类型，而这些类型大部分都是基于 Class 构建的。</p></blockquote><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> User &#123;</div><div class="line">  id: <span class="built_in">number</span></div><div class="line">  name: <span class="built_in">string</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> user: User = &#123; id: <span class="number">1</span>, name: <span class="string">'Bob'</span> &#125;</div></pre></td></tr></table></figure><p>更多细节：<br></p><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> User &#123;</div><div class="line">  <span class="comment">// 只读属性</span></div><div class="line">  readonly id: <span class="built_in">number</span></div><div class="line"></div><div class="line">  <span class="comment">// 存取器，get/set</span></div><div class="line">  <span class="keyword">private</span> _name: <span class="built_in">string</span></div><div class="line">  <span class="keyword">get</span> name(): <span class="built_in">string</span> &#123;</div><div class="line">    <span class="comment">// dosomething</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._name</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">set</span> name(name: <span class="built_in">string</span>) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'this is set method'</span>)</div><div class="line">    <span class="comment">// dosomething</span></div><div class="line">    <span class="keyword">this</span>._name = name</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// 构造函数</span></div><div class="line">  <span class="keyword">constructor</span>(<span class="params">id: <span class="built_in">number</span>, theName: <span class="built_in">string</span></span>) &#123;</div><div class="line">    <span class="comment">// 只读属性只能在构造函数里初始化</span></div><div class="line">    <span class="keyword">this</span>.id = id</div><div class="line">    <span class="keyword">this</span>._name = theName</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// 实例方法</span></div><div class="line">  say() &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">`name: <span class="subst">$&#123;this.name&#125;</span>`</span>)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// 静态方法</span></div><div class="line">  <span class="keyword">static</span> print() &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'static method'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> user = <span class="keyword">new</span> User(<span class="number">1</span>, <span class="string">'Bob'</span>)</div><div class="line">user.name = <span class="string">'aa'</span> <span class="comment">// =&gt; 'this is set method'</span></div><div class="line">user.say() <span class="comment">// =&gt; 'name: aa'</span></div><div class="line">User.print() <span class="comment">// =&gt; 'static method'</span></div></pre></td></tr></table></figure><p></p><h4 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h4><p>泛型是用来解决类型重用的问题。</p><p>以下只能传递 number 的参数并返回：<br></p><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">identity</span>(<span class="params">arg: <span class="built_in">number</span></span>): <span class="title">number</span> </span>&#123;</div><div class="line">  <span class="comment">// dosomething</span></div><div class="line">  <span class="keyword">return</span> arg</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p><p>现在想传递一个 string 类型的参数，然后也返回它，这个时候就可以使用范型，使用范型可以接收任意类型并返回：<br></p><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 这个 T 就是泛型，也可以叫其他名字</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">identity</span>&lt;<span class="title">T</span>&gt;(<span class="params">arg: T</span>): <span class="title">T</span> </span>&#123;</div><div class="line">  <span class="comment">// dosomething</span></div><div class="line">  <span class="keyword">return</span> arg</div><div class="line">&#125;</div><div class="line">identity&lt;<span class="built_in">string</span>&gt;(<span class="string">'Bob'</span>)</div><div class="line">identity(<span class="string">'Bob'</span>) <span class="comment">// 自动推导</span></div><div class="line">identity(<span class="number">0</span>)</div><div class="line">identity(<span class="literal">true</span>)</div></pre></td></tr></table></figure><p></p><p>我们可以轻松地使用泛型来实现数据包装：<br></p><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fetch</span>&lt;<span class="title">T</span>&gt;(<span class="params">url: <span class="built_in">string</span></span>): <span class="title">Promise</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">  <span class="comment">// 远程请求数据并返回结果</span></div><div class="line">  <span class="keyword">return</span> http(url).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> data <span class="keyword">as</span> T</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"><span class="keyword">class</span> User &#123;</div><div class="line">  name: <span class="built_in">string</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 泛型使用</span></div><div class="line"><span class="keyword">let</span> user = fetch&lt;User&gt;(<span class="string">'http://xxx/api/user'</span>)</div></pre></td></tr></table></figure><p></p><h4 id="快速使用"><a href="#快速使用" class="headerlink" title="快速使用"></a>快速使用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i -g typescript</div></pre></td></tr></table></figure><p><a href="https://tslang.cn/docs/handbook/decorators.html" target="_blank" rel="external">ts中文网</a><br><a href="http://tasaid.com/Blog/20171011232755.html" target="_blank" rel="external">资料</a></p></div><div></div><div></div><footer class="post-footer"><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/2017/10/11/es6-class/" rel="next" title="es6-class"><i class="fa fa-chevron-left"></i> es6-class</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"> <a href="/2017/10/13/vue-cli相关/" rel="prev" title="vue-cli相关">vue-cli相关<i class="fa fa-chevron-right"></i></a></div></div></footer></article><div class="post-spread"></div></div></div><div class="comments" id="comments"></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap"> 文章目录</li><li class="sidebar-nav-overview" data-target="site-overview"> 站点概览</li></ul><section class="site-overview sidebar-panel"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"> <img class="site-author-image" itemprop="image" src="/images/tx.png" alt="weitongtong"><p class="site-author-name" itemprop="name">weitongtong</p><p class="site-description motion-element" itemprop="description">长亭外，古道边，芳草碧连天</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"> <a href="/archives"><span class="site-state-item-count">34</span> <span class="site-state-item-name">日志</span></a></div></nav><div class="links-of-author motion-element"></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础类型"><span class="nav-number">1.</span> <span class="nav-text">基础类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复杂类型"><span class="nav-number">2.</span> <span class="nav-text">复杂类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高级类型"><span class="nav-number">3.</span> <span class="nav-text">高级类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Model"><span class="nav-number">4.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Class类"><span class="nav-number">5.</span> <span class="nav-text">Class类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#泛型"><span class="nav-number">6.</span> <span class="nav-text">泛型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速使用"><span class="nav-number">7.</span> <span class="nav-text">快速使用</span></a></li></ol></div></div></section></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright"> &copy; <span itemprop="copyrightYear">2017</span><span class="with-love"><i class="fa fa-heart"></i></span> <span class="author" itemprop="copyrightHolder">weitongtong</span></div> <span id="busuanzi_container_site_pv" class="powered-by">pv:<span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv">uv:<span id="busuanzi_value_site_uv"></span></span><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i></div></div><script type="text/javascript">
+  </style>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div id="particles-js"></div>
+    <div class="headband"></div>
+    <a href="https://github.com/weitongtong"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Output</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">output</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/custom" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/custom" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-gitbook">
+          <a href="/gitbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            gitbook
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">
+  <i class="fa fa-times" style="font-size: 18px; margin-top: 10px;" aria-hidden="true"></i>
+</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/12/TypeScript入门/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="weitongtong">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/tx.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Output">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Output" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                TypeScript入门
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-12T16:47:46+08:00">
+                2017-10-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>TypeScript 的定位是做静态类型语言，而 Flow 的定位是类型检查器。<br>TypeScript 是 JavaScript 的超集，就是在 JavaScript 上做了一层封装，封装出 TypeScript 的特性，当然最终代码可以编译为 JavaScript。</p>
+<p>demo.ts<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> num: <span class="built_in">number</span></div><div class="line">num = <span class="string">'linkFly'</span> <span class="comment">// 会报错</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> fetch = <span class="function"><span class="keyword">function</span>(<span class="params">url: <span class="built_in">string</span></span>): <span class="title">Promise</span> </span>&#123;</div><div class="line">&#125;</div><div class="line"><span class="comment">// fetch() 函数接收一个 string 类型的参数 url，返回一个 Promise。</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> fetch = <span class="function"><span class="keyword">function</span> (<span class="params">url: <span class="built_in">string</span> | object, params?: <span class="built_in">any</span>, user?: User</span>): <span class="title">Promise</span>&lt;<span class="title">object</span> | <span class="title">Error</span>&gt; </span>&#123;</div><div class="line">  <span class="comment">// dosomething</span></div><div class="line"></div><div class="line">  <span class="keyword">return</span> http(options).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> data</div><div class="line">  &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> err</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个 TypeScript 包含了很多信息：</p>
+<ol>
+<li>url 可能是 string 或 object 类型</li>
+<li>params 是可以不传的，也可以传递任何类型</li>
+<li>user 要求是 User 类型的，当然也是可以不传</li>
+<li>返回了一个 Promise，Promise 的求值结果可能是 object，也有可能是 Error</li>
+</ol>
+<p>看到上面的信息后，我们大概知道可以这么调用并处理 fetch 的返回结果：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> result = <span class="keyword">await</span> fetch(<span class="string">'https://tasaid.com'</span>, &#123; id: <span class="number">1</span> &#125;)</div><div class="line"></div><div class="line"><span class="comment">// fetch 可能会返回 Error</span></div><div class="line"><span class="keyword">if</span> (result <span class="keyword">instanceof</span> <span class="built_in">Error</span>) &#123;</div><div class="line">  <span class="comment">// 错误处理</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这就是静态数据类型的意义。静态类型在越复杂的应用中，需求越强烈。<br>这是 react 对于数据类型的约束：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> PropTypes <span class="keyword">from</span> <span class="string">'prop-types'</span></div><div class="line"></div><div class="line">component.propTypes = &#123;</div><div class="line">  optionalArray: PropTypes.array,</div><div class="line">  optionalBool: PropTypes.bool,</div><div class="line">  optionalFunc: PropTypes.func,</div><div class="line">  requiredFunc: PropTypes.func.isRequired,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这是 vue 对于数据类型的约束：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Vue.component(<span class="string">'component'</span>, &#123;</div><div class="line">  props: &#123;</div><div class="line">    optionalArray: <span class="built_in">Array</span>,</div><div class="line">    optionalBool: <span class="built_in">Boolean</span>,</div><div class="line">    optionalFunc: <span class="built_in">Function</span>,</div><div class="line">    requiredFunc: &#123;</div><div class="line">      <span class="keyword">type</span>: <span class="built_in">Function</span>,</div><div class="line">      required: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>而引入了 TypeScript 之后，就会感受到真正流畅的数据类型约束：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Component &#123;</div><div class="line">  optionalArray?: <span class="built_in">Array</span>&lt;<span class="built_in">string</span>&gt; <span class="comment">// string 类型的 数组</span></div><div class="line">  optionalBool?: <span class="built_in">boolean</span> <span class="comment">// 写上 ? 号，就表示着这个属性可能为空</span></div><div class="line">  optionalFunc?: <span class="function">(<span class="params">foo: <span class="built_in">string</span>, bar: <span class="built_in">number</span></span>) =&gt;</span> <span class="built_in">boolean</span> <span class="comment">// 函数的参数，返回值都一目了然</span></div><div class="line">  requiredFunc: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">void</span> </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>小tips：</p>
+<ul>
+<li>使用 visual studio code 编辑器会体验到 TypeScript 强大的类型推导，毕竟两个都是微软亲儿子。</li>
+<li>一些 JavaScript 编写的大型的第三方库，都提供了 TypeScript 的类型声明文件（<code>*.d.ts</code> 文件）, 一般都放在包目录的 types 文件夹中。或者在 <code>@didi/*</code> 仓库名下可以找到。</li>
+<li>babel 是将高级版本的 JavaScript 编译为目标版本的 JavaScript，TypeScript 是将 TypeScript 编译为目标版本的 JavaScript。它们的编译是重叠的，也就是说 TypeScript 可以不再依赖 babel 编译。</li>
+</ul>
+<h4 id="基础类型"><a href="#基础类型" class="headerlink" title="基础类型"></a>基础类型</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a: <span class="built_in">number</span></div><div class="line"><span class="keyword">let</span> b = <span class="literal">true</span> <span class="comment">// 有默认值的情况，甚至不需要声明类型，ts 会自动推导</span></div><div class="line"><span class="keyword">let</span> c: [<span class="built_in">string</span>, <span class="built_in">number</span>] <span class="comment">// 元组</span></div><div class="line"><span class="keyword">enum</span> Color &#123; Red, Green, Blue &#125; <span class="comment">// 枚举</span></div><div class="line"><span class="keyword">let</span> d: &#123; name: <span class="built_in">String</span> &#125; = &#123; name: <span class="string">'Bob'</span> &#125;</div></pre></td></tr></table></figure>
+<h4 id="复杂类型"><a href="#复杂类型" class="headerlink" title="复杂类型"></a>复杂类型</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// array</span></div><div class="line"><span class="keyword">let</span> list_a: <span class="built_in">number</span>[] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line"><span class="keyword">let</span> list_b: <span class="built_in">Array</span>&lt;<span class="built_in">number</span>&gt; = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="comment">// number 类型的数组</span></div><div class="line"><span class="keyword">let</span> list_c: [<span class="built_in">string</span>, <span class="built_in">number</span>] = [<span class="string">'Bob'</span>, <span class="number">0</span>]</div><div class="line"></div><div class="line"><span class="comment">// any</span></div><div class="line"><span class="keyword">let</span> notSure: <span class="built_in">any</span> = <span class="number">4</span></div><div class="line">notSure = <span class="literal">true</span> <span class="comment">// any 类型可以自由赋值</span></div><div class="line"></div><div class="line"><span class="comment">// 函数类型</span></div><div class="line"><span class="keyword">let</span> fn: <span class="function">(<span class="params">id: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">number</span> = <span class="function">(<span class="params">id</span>) =&gt;</span> <span class="number">1</span></div><div class="line"><span class="comment">// 这里使用了 ECMAScript 6 的箭头函数，与下面的等价</span></div><div class="line"><span class="keyword">let</span> fn: <span class="function">(<span class="params">id: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">number</span> = <span class="function"><span class="keyword">function</span>(<span class="params">id</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="number">1</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="高级类型"><a href="#高级类型" class="headerlink" title="高级类型"></a>高级类型</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 联合类型，foo 是 string 或 number</span></div><div class="line"><span class="keyword">let</span> foo: <span class="built_in">string</span> | <span class="built_in">number</span></div><div class="line"></div><div class="line"><span class="comment">// 类型断言，强制使用兼容类型中的某一类型</span></div><div class="line">(foo <span class="keyword">as</span> <span class="built_in">string</span>)</div><div class="line"></div><div class="line"><span class="comment">// 类型保护（判断）</span></div><div class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> foo === <span class="string">'string'</span>) &#123;</div><div class="line">  <span class="comment">// dosomething</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 类型保护（判断）</span></div><div class="line"><span class="keyword">if</span> (foo <span class="keyword">instanceof</span> <span class="built_in">String</span>) &#123;</div><div class="line">  <span class="comment">// dosomething</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> user: &#123; id: <span class="built_in">number</span>, name: <span class="built_in">string</span> &#125; = &#123; id: <span class="number">1</span>, name: <span class="string">'Bob'</span> &#125;</div></pre></td></tr></table></figure>
+<h4 id="Class类"><a href="#Class类" class="headerlink" title="Class类"></a>Class类</h4><p>所有类型的根本都是类。</p>
+<blockquote>
+<p>注意，TS 中类型是核心，当你想把一个项目从 JavaScript 迁移到 TypeScript 的时候，需要为项目中补充大量的类型，而这些类型大部分都是基于 Class 构建的。</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> User &#123;</div><div class="line">  id: <span class="built_in">number</span></div><div class="line">  name: <span class="built_in">string</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> user: User = &#123; id: <span class="number">1</span>, name: <span class="string">'Bob'</span> &#125;</div></pre></td></tr></table></figure>
+<p>更多细节：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> User &#123;</div><div class="line">  <span class="comment">// 只读属性</span></div><div class="line">  readonly id: <span class="built_in">number</span></div><div class="line"></div><div class="line">  <span class="comment">// 存取器，get/set</span></div><div class="line">  <span class="keyword">private</span> _name: <span class="built_in">string</span></div><div class="line">  <span class="keyword">get</span> name(): <span class="built_in">string</span> &#123;</div><div class="line">    <span class="comment">// dosomething</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._name</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">set</span> name(name: <span class="built_in">string</span>) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'this is set method'</span>)</div><div class="line">    <span class="comment">// dosomething</span></div><div class="line">    <span class="keyword">this</span>._name = name</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// 构造函数</span></div><div class="line">  <span class="keyword">constructor</span>(<span class="params">id: <span class="built_in">number</span>, theName: <span class="built_in">string</span></span>) &#123;</div><div class="line">    <span class="comment">// 只读属性只能在构造函数里初始化</span></div><div class="line">    <span class="keyword">this</span>.id = id</div><div class="line">    <span class="keyword">this</span>._name = theName</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// 实例方法</span></div><div class="line">  say() &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">`name: <span class="subst">$&#123;this.name&#125;</span>`</span>)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// 静态方法</span></div><div class="line">  <span class="keyword">static</span> print() &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'static method'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> user = <span class="keyword">new</span> User(<span class="number">1</span>, <span class="string">'Bob'</span>)</div><div class="line">user.name = <span class="string">'aa'</span> <span class="comment">// =&gt; 'this is set method'</span></div><div class="line">user.say() <span class="comment">// =&gt; 'name: aa'</span></div><div class="line">User.print() <span class="comment">// =&gt; 'static method'</span></div></pre></td></tr></table></figure></p>
+<h4 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h4><p>泛型是用来解决类型重用的问题。</p>
+<p>以下只能传递 number 的参数并返回：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">identity</span>(<span class="params">arg: <span class="built_in">number</span></span>): <span class="title">number</span> </span>&#123;</div><div class="line">  <span class="comment">// dosomething</span></div><div class="line">  <span class="keyword">return</span> arg</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>现在想传递一个 string 类型的参数，然后也返回它，这个时候就可以使用范型，使用范型可以接收任意类型并返回：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 这个 T 就是泛型，也可以叫其他名字</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">identity</span>&lt;<span class="title">T</span>&gt;(<span class="params">arg: T</span>): <span class="title">T</span> </span>&#123;</div><div class="line">  <span class="comment">// dosomething</span></div><div class="line">  <span class="keyword">return</span> arg</div><div class="line">&#125;</div><div class="line">identity&lt;<span class="built_in">string</span>&gt;(<span class="string">'Bob'</span>)</div><div class="line">identity(<span class="string">'Bob'</span>) <span class="comment">// 自动推导</span></div><div class="line">identity(<span class="number">0</span>)</div><div class="line">identity(<span class="literal">true</span>)</div></pre></td></tr></table></figure></p>
+<p>我们可以轻松地使用泛型来实现数据包装：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fetch</span>&lt;<span class="title">T</span>&gt;(<span class="params">url: <span class="built_in">string</span></span>): <span class="title">Promise</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">  <span class="comment">// 远程请求数据并返回结果</span></div><div class="line">  <span class="keyword">return</span> http(url).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> data <span class="keyword">as</span> T</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"><span class="keyword">class</span> User &#123;</div><div class="line">  name: <span class="built_in">string</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 泛型使用</span></div><div class="line"><span class="keyword">let</span> user = fetch&lt;User&gt;(<span class="string">'http://xxx/api/user'</span>)</div></pre></td></tr></table></figure></p>
+<h4 id="快速使用"><a href="#快速使用" class="headerlink" title="快速使用"></a>快速使用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i -g typescript</div></pre></td></tr></table></figure>
+<p><a href="https://tslang.cn/docs/handbook/decorators.html" target="_blank" rel="external">ts中文网</a><br><a href="http://tasaid.com/Blog/20171011232755.html" target="_blank" rel="external">资料</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/11/es6-class/" rel="next" title="es6-class">
+                <i class="fa fa-chevron-left"></i> es6-class
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/13/vue-cli相关/" rel="prev" title="vue-cli相关">
+                vue-cli相关 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/tx.png"
+               alt="weitongtong" />
+          <p class="site-author-name" itemprop="name">weitongtong</p>
+          <p class="site-description motion-element" itemprop="description">长亭外，古道边，芳草碧连天</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">35</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础类型"><span class="nav-number">1.</span> <span class="nav-text">基础类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复杂类型"><span class="nav-number">2.</span> <span class="nav-text">复杂类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高级类型"><span class="nav-number">3.</span> <span class="nav-text">高级类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Model"><span class="nav-number">4.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Class类"><span class="nav-number">5.</span> <span class="nav-text">Class类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#泛型"><span class="nav-number">6.</span> <span class="nav-text">泛型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速使用"><span class="nav-number">7.</span> <span class="nav-text">快速使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">weitongtong</span>
+</div>
+
+<span id="busuanzi_container_site_pv" class="powered-by">
+  pv: <span id="busuanzi_value_site_pv"></span>
+</span>
+<span id="busuanzi_container_site_uv">
+  uv: <span id="busuanzi_value_site_uv"></span>
+</span>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
-</script><script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script><script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script><script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script><script type="text/javascript">
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+  
+  
+  <script type="text/javascript">
     // Popup Window;
     var isfetched = false;
     // Search DB path;
@@ -163,4 +799,20 @@
     $('.popup').click(function(e){
       e.stopPropagation();
     });
-  </script><script type="text/javascript" src="/js/src/particle.min.js"></script><script type="text/javascript" src="/js/src/main.js"></script></body></html>
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/particle.min.js"></script>
+  <script type="text/javascript" src="/js/src/main.js"></script>
+
+</body>
+</html>

@@ -1,4 +1,104 @@
-<!doctype html><html class="theme-next mist use-motion" lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css"><meta name="keywords" content="en, EN, En, wtt, blog"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0"><meta name="description" content="class基本语法class继承123456789101112class Point &amp;#123;&amp;#125;class ColorPoint extends Point&amp;#123;  constructor(x, y, color) &amp;#123;    super(x, y) // 调用父类的 constructor(x, y)    this.color = color  &amp;#125;  to"><meta property="og:type" content="article"><meta property="og:title" content="es6-class"><meta property="og:url" content="http://yoursite.com/2017/10/11/es6-class/index.html"><meta property="og:site_name" content="Output"><meta property="og:description" content="class基本语法class继承123456789101112class Point &amp;#123;&amp;#125;class ColorPoint extends Point&amp;#123;  constructor(x, y, color) &amp;#123;    super(x, y) // 调用父类的 constructor(x, y)    this.color = color  &amp;#125;  to"><meta property="og:locale" content="zh-Hans"><meta property="og:updated_time" content="2017-10-12T15:04:58.000Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="es6-class"><meta name="twitter:description" content="class基本语法class继承123456789101112class Point &amp;#123;&amp;#125;class ColorPoint extends Point&amp;#123;  constructor(x, y, color) &amp;#123;    super(x, y) // 调用父类的 constructor(x, y)    this.color = color  &amp;#125;  to"><script type="text/javascript" id="hexo.configurations">
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="en, EN, En, wtt, blog" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="class基本语法class继承123456789101112class Point &amp;#123;&amp;#125;class ColorPoint extends Point&amp;#123;  constructor(x, y, color) &amp;#123;    super(x, y) // 调用父类的 constructor(x, y)    this.color = color  &amp;#125;  to">
+<meta property="og:type" content="article">
+<meta property="og:title" content="es6-class">
+<meta property="og:url" content="http://yoursite.com/2017/10/11/es6-class/index.html">
+<meta property="og:site_name" content="Output">
+<meta property="og:description" content="class基本语法class继承123456789101112class Point &amp;#123;&amp;#125;class ColorPoint extends Point&amp;#123;  constructor(x, y, color) &amp;#123;    super(x, y) // 调用父类的 constructor(x, y)    this.color = color  &amp;#125;  to">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-12T15:04:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="es6-class">
+<meta name="twitter:description" content="class基本语法class继承123456789101112class Point &amp;#123;&amp;#125;class ColorPoint extends Point&amp;#123;  constructor(x, y, color) &amp;#123;    super(x, y) // 调用父类的 constructor(x, y)    this.color = color  &amp;#125;  to">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
@@ -18,7 +118,18 @@
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
-</script><link rel="canonical" href="http://yoursite.com/2017/10/11/es6-class/"><title> es6-class | Output</title><style>
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/11/es6-class/"/>
+
+
+
+
+
+  <title> es6-class | Output </title>
+  <style>
     #particles-js{
       width: 100%;
       height: 100%;
@@ -30,11 +141,528 @@
       left: 0;
       z-index: -1;
     }
-  </style></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container one-collumn sidebar-position-left page-post-detail"><div id="particles-js"></div><div class="headband"></div> <a href="https://github.com/weitongtong"><img style="position: absolute; top: 0; right: 0; border: 0" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Output</span><span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle">output</p></div><div class="site-nav-toggle"> <button><span class="btn-bar"></span><span class="btn-bar"></span><span class="btn-bar"></span></button></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/custom" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br> 首页</a></li><li class="menu-item menu-item-about"><a href="/custom" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br> 关于</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br> 归档</a></li><li class="menu-item menu-item-gitbook"><a href="/gitbook" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i><br> gitbook</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br> 搜索</a></li></ul><div class="site-search"><div class="popup"><span class="search-icon fa fa-search"></span> <input type="text" id="local-search-input"><div id="local-search-result"></div><span class="popup-btn-close"><i class="fa fa-times" style="font-size: 18px; margin-top: 10px" aria-hidden="true"></i></span></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/11/es6-class/"><span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="weitongtong"><meta itemprop="description" content=""><meta itemprop="image" content="/images/tx.png"></span><span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Output"> <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject"><img style="display:none" itemprop="url image" alt="Output" src=""></span></span><header class="post-header"><h1 class="post-title" itemprop="name headline"> es6-class</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-11T14:46:53+08:00">2017-10-11</time></span></div></header><div class="post-body" itemprop="articleBody"><h4 id="class基本语法"><a href="#class基本语法" class="headerlink" title="class基本语法"></a>class基本语法</h4><h4 id="class继承"><a href="#class继承" class="headerlink" title="class继承"></a>class继承</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span></span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(x, y, color) &#123;</div><div class="line">    <span class="keyword">super</span>(x, y) <span class="comment">// 调用父类的 constructor(x, y)</span></div><div class="line">    <span class="keyword">this</span>.color = color</div><div class="line">  &#125;</div><div class="line">  toString() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.color + <span class="string">' '</span> + <span class="keyword">super</span>.toString() <span class="comment">// 调用父类的 toString()</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>这里的 super 表示 父类的构造函数，用来新建父类的 this 对象。<br>子类必须在 constructor 方法中调用 super 方法，否则新建实例时会报错。这是因为子类没有自己的 this 对象，而是继承父类的 this 对象，然后对其进行加工。如果不调用 super 方法，子类就得不到 this 对象。</p><a id="more"></a><blockquote><p>ES5 的继承，实质是先创造子类的实例对象 this ，然后再将父类的方法添加到 this 上面 (<code>Parent.apply(this)</code>)。ES6 的继承机制完全不同，实质是先创造父类的实例对象 this (所以必须先调用<code>super</code>方法)，然后再用子类的构造函数修改<code>this</code>。</p></blockquote><p>Object.getPrototypeOf方法：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.getPrototypeOf(ColorPoint) === Point <span class="comment">// true</span></div></pre></td></tr></table></figure><p></p><p>super关键字<br>既可以当作函数使用，也可以当作对象使用。<br>(1)super 作为函数调用时，代表父类的构造函数<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">new</span>.target.name) <span class="comment">// new.target 指向当前正在执行的函数</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">super</span>()</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">new</span> A() <span class="comment">// A</span></div><div class="line"><span class="keyword">new</span> B() <span class="comment">// B</span></div></pre></td></tr></table></figure><p></p><p>super 虽然代表了父类 A 的构造函数，但返回的是子类 B 的实例，即 super 内部的 this 指的是 B，因此 super() 在这里相当于 A.prototype.constructor.call(this)</p><blockquote><p>作为函数时，super() 只能在子类的 构造函数中使用。</p></blockquote><p>(2) super 作为对象时：</p><ul><li>在普通方法中，指向父类的原型对象。</li><li>在静态方法中，指向父类。</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">this</span>.p = <span class="number">2</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">A.prototype.q = <span class="number">3</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</div><div class="line">  get m() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">super</span>.p</div><div class="line">  &#125;</div><div class="line">  get n() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">super</span>.q</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> B()</div><div class="line">b.m <span class="comment">// undefined</span></div><div class="line">b.n <span class="comment">// 3</span></div></pre></td></tr></table></figure><p>由于 super 指向父类的原型对象，所以定义在父实例上的方法或属性，是无法通过 super 调用到的。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">this</span>.x = <span class="number">1</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">super</span>();</div><div class="line">    <span class="keyword">this</span>.x = <span class="number">2</span></div><div class="line">    <span class="keyword">super</span>.x = <span class="number">3</span> <span class="comment">// super就是this</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">super</span>.x) <span class="comment">// =&gt; undefined  // 读取的是A.prototype.x</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.x) <span class="comment">// =&gt; 3</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> B();</div></pre></td></tr></table></figure><p>prototype属性</p><ul><li>子类的<code>__proto__</code>属性，表示构造函数的继承，总是指向父类。</li><li>子类prototype属性的<code>__proto__</code>属性，表示方法的继承，总是指向父类的prototype属性。</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</div><div class="line">&#125;</div><div class="line">B.__proto__ === A <span class="comment">// true //目的是为了继承静态属性和方法</span></div><div class="line">B.prototype.__proto__ === A.prototype <span class="comment">// true //可以理解为B的原型(B.prototype)指向A类的一个实例</span></div></pre></td></tr></table></figure><p>看下3种比较特殊的情况，其实都不难理解：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">Object</span> </span>&#123;</div><div class="line">&#125;</div><div class="line">A.__proto__ === <span class="built_in">Object</span> <span class="comment">// true</span></div><div class="line">A.prototype.__proto__ === <span class="built_in">Object</span>.prototype <span class="comment">// true</span></div></pre></td></tr></table></figure><p></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">&#125;</div><div class="line">A.__proto__ === <span class="built_in">Function</span>.prototype <span class="comment">// true</span></div><div class="line">A.prototype.__proto__ === <span class="built_in">Object</span>.prototype <span class="comment">// true</span></div></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">null</span> </span>&#123;</div><div class="line">&#125;</div><div class="line">A.__proto__ === <span class="built_in">Function</span>.prototype <span class="comment">// true</span></div><div class="line">A.prototype.__proto__ === <span class="literal">undefined</span> <span class="comment">// true</span></div></pre></td></tr></table></figure><div class="to-be-continued"></div></div><div></div><div></div><footer class="post-footer"><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/2017/10/10/js对象/" rel="next" title="js对象"><i class="fa fa-chevron-left"></i> js对象</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"> <a href="/2017/10/12/TypeScript入门/" rel="prev" title="TypeScript入门">TypeScript入门<i class="fa fa-chevron-right"></i></a></div></div></footer></article><div class="post-spread"></div></div></div><div class="comments" id="comments"></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap"> 文章目录</li><li class="sidebar-nav-overview" data-target="site-overview"> 站点概览</li></ul><section class="site-overview sidebar-panel"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"> <img class="site-author-image" itemprop="image" src="/images/tx.png" alt="weitongtong"><p class="site-author-name" itemprop="name">weitongtong</p><p class="site-description motion-element" itemprop="description">长亭外，古道边，芳草碧连天</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"> <a href="/archives"><span class="site-state-item-count">34</span> <span class="site-state-item-name">日志</span></a></div></nav><div class="links-of-author motion-element"></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#class基本语法"><span class="nav-number">1.</span> <span class="nav-text">class基本语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#class继承"><span class="nav-number">2.</span> <span class="nav-text">class继承</span></a></li></ol></div></div></section></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright"> &copy; <span itemprop="copyrightYear">2017</span><span class="with-love"><i class="fa fa-heart"></i></span> <span class="author" itemprop="copyrightHolder">weitongtong</span></div> <span id="busuanzi_container_site_pv" class="powered-by">pv:<span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv">uv:<span id="busuanzi_value_site_uv"></span></span><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i></div></div><script type="text/javascript">
+  </style>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div id="particles-js"></div>
+    <div class="headband"></div>
+    <a href="https://github.com/weitongtong"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Output</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">output</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/custom" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/custom" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-gitbook">
+          <a href="/gitbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            gitbook
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">
+  <i class="fa fa-times" style="font-size: 18px; margin-top: 10px;" aria-hidden="true"></i>
+</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/11/es6-class/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="weitongtong">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/tx.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Output">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Output" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                es6-class
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-11T14:46:53+08:00">
+                2017-10-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="class基本语法"><a href="#class基本语法" class="headerlink" title="class基本语法"></a>class基本语法</h4><h4 id="class继承"><a href="#class继承" class="headerlink" title="class继承"></a>class继承</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span></span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(x, y, color) &#123;</div><div class="line">    <span class="keyword">super</span>(x, y) <span class="comment">// 调用父类的 constructor(x, y)</span></div><div class="line">    <span class="keyword">this</span>.color = color</div><div class="line">  &#125;</div><div class="line">  toString() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.color + <span class="string">' '</span> + <span class="keyword">super</span>.toString() <span class="comment">// 调用父类的 toString()</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里的 super 表示 父类的构造函数，用来新建父类的 this 对象。<br>子类必须在 constructor 方法中调用 super 方法，否则新建实例时会报错。这是因为子类没有自己的 this 对象，而是继承父类的 this 对象，然后对其进行加工。如果不调用 super 方法，子类就得不到 this 对象。</p>
+<a id="more"></a>
+<blockquote>
+<p>ES5 的继承，实质是先创造子类的实例对象 this ，然后再将父类的方法添加到 this 上面 (<code>Parent.apply(this)</code>)。ES6 的继承机制完全不同，实质是先创造父类的实例对象 this (所以必须先调用<code>super</code>方法)，然后再用子类的构造函数修改<code>this</code>。</p>
+</blockquote>
+<p>Object.getPrototypeOf方法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.getPrototypeOf(ColorPoint) === Point <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p>super关键字<br>既可以当作函数使用，也可以当作对象使用。<br>(1)super 作为函数调用时，代表父类的构造函数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">new</span>.target.name) <span class="comment">// new.target 指向当前正在执行的函数</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">super</span>()</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">new</span> A() <span class="comment">// A</span></div><div class="line"><span class="keyword">new</span> B() <span class="comment">// B</span></div></pre></td></tr></table></figure></p>
+<p>super 虽然代表了父类 A 的构造函数，但返回的是子类 B 的实例，即 super 内部的 this 指的是 B，因此 super() 在这里相当于 A.prototype.constructor.call(this)</p>
+<blockquote>
+<p>作为函数时，super() 只能在子类的 构造函数中使用。</p>
+</blockquote>
+<p>(2) super 作为对象时：</p>
+<ul>
+<li>在普通方法中，指向父类的原型对象。</li>
+<li>在静态方法中，指向父类。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">this</span>.p = <span class="number">2</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">A.prototype.q = <span class="number">3</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</div><div class="line">  get m() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">super</span>.p</div><div class="line">  &#125;</div><div class="line">  get n() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">super</span>.q</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> B()</div><div class="line">b.m <span class="comment">// undefined</span></div><div class="line">b.n <span class="comment">// 3</span></div></pre></td></tr></table></figure>
+<p>由于 super 指向父类的原型对象，所以定义在父实例上的方法或属性，是无法通过 super 调用到的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">this</span>.x = <span class="number">1</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">super</span>();</div><div class="line">    <span class="keyword">this</span>.x = <span class="number">2</span></div><div class="line">    <span class="keyword">super</span>.x = <span class="number">3</span> <span class="comment">// super就是this</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">super</span>.x) <span class="comment">// =&gt; undefined  // 读取的是A.prototype.x</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.x) <span class="comment">// =&gt; 3</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> B();</div></pre></td></tr></table></figure>
+<p>prototype属性</p>
+<ul>
+<li>子类的<code>__proto__</code>属性，表示构造函数的继承，总是指向父类。</li>
+<li>子类prototype属性的<code>__proto__</code>属性，表示方法的继承，总是指向父类的prototype属性。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</div><div class="line">&#125;</div><div class="line">B.__proto__ === A <span class="comment">// true //目的是为了继承静态属性和方法</span></div><div class="line">B.prototype.__proto__ === A.prototype <span class="comment">// true //可以理解为B的原型(B.prototype)指向A类的一个实例</span></div></pre></td></tr></table></figure>
+<p>看下3种比较特殊的情况，其实都不难理解：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">Object</span> </span>&#123;</div><div class="line">&#125;</div><div class="line">A.__proto__ === <span class="built_in">Object</span> <span class="comment">// true</span></div><div class="line">A.prototype.__proto__ === <span class="built_in">Object</span>.prototype <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">&#125;</div><div class="line">A.__proto__ === <span class="built_in">Function</span>.prototype <span class="comment">// true</span></div><div class="line">A.prototype.__proto__ === <span class="built_in">Object</span>.prototype <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">null</span> </span>&#123;</div><div class="line">&#125;</div><div class="line">A.__proto__ === <span class="built_in">Function</span>.prototype <span class="comment">// true</span></div><div class="line">A.prototype.__proto__ === <span class="literal">undefined</span> <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<div class="to-be-continued"></div>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/10/js对象/" rel="next" title="js对象">
+                <i class="fa fa-chevron-left"></i> js对象
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/12/TypeScript入门/" rel="prev" title="TypeScript入门">
+                TypeScript入门 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/tx.png"
+               alt="weitongtong" />
+          <p class="site-author-name" itemprop="name">weitongtong</p>
+          <p class="site-description motion-element" itemprop="description">长亭外，古道边，芳草碧连天</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">35</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#class基本语法"><span class="nav-number">1.</span> <span class="nav-text">class基本语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#class继承"><span class="nav-number">2.</span> <span class="nav-text">class继承</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">weitongtong</span>
+</div>
+
+<span id="busuanzi_container_site_pv" class="powered-by">
+  pv: <span id="busuanzi_value_site_pv"></span>
+</span>
+<span id="busuanzi_container_site_uv">
+  uv: <span id="busuanzi_value_site_uv"></span>
+</span>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
-</script><script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script><script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script><script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script><script type="text/javascript">
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+  
+  
+  <script type="text/javascript">
     // Popup Window;
     var isfetched = false;
     // Search DB path;
@@ -163,4 +791,20 @@
     $('.popup').click(function(e){
       e.stopPropagation();
     });
-  </script><script type="text/javascript" src="/js/src/particle.min.js"></script><script type="text/javascript" src="/js/src/main.js"></script></body></html>
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/particle.min.js"></script>
+  <script type="text/javascript" src="/js/src/main.js"></script>
+
+</body>
+</html>

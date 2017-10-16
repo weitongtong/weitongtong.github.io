@@ -1,4 +1,104 @@
-<!doctype html><html class="theme-next mist use-motion" lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css"><meta name="keywords" content="en, EN, En, wtt, blog"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0"><meta name="description" content="问题：  网页中预加载20张图片资源，分布加载，一次加载10张，两次完成，怎么控制图片请求的并发，怎么感知当前异步请求是否完成？  html代码如下：123456&amp;lt;body&amp;gt;  &amp;lt;div class=&quot;wrap&quot;&amp;gt;    &amp;lt;div class=&quot;loading&quot;&amp;gt;正在加载。。。&amp;lt;/div&amp;gt;    &amp;lt;div class=&quot;imgs&quot;&amp;gt;&amp;lt"><meta property="og:type" content="article"><meta property="og:title" content="Promise 异步流程控制"><meta property="og:url" content="http://yoursite.com/2017/09/29/Promise-异步流程控制/index.html"><meta property="og:site_name" content="Output"><meta property="og:description" content="问题：  网页中预加载20张图片资源，分布加载，一次加载10张，两次完成，怎么控制图片请求的并发，怎么感知当前异步请求是否完成？  html代码如下：123456&amp;lt;body&amp;gt;  &amp;lt;div class=&quot;wrap&quot;&amp;gt;    &amp;lt;div class=&quot;loading&quot;&amp;gt;正在加载。。。&amp;lt;/div&amp;gt;    &amp;lt;div class=&quot;imgs&quot;&amp;gt;&amp;lt"><meta property="og:locale" content="zh-Hans"><meta property="og:updated_time" content="2017-10-03T09:45:16.000Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Promise 异步流程控制"><meta name="twitter:description" content="问题：  网页中预加载20张图片资源，分布加载，一次加载10张，两次完成，怎么控制图片请求的并发，怎么感知当前异步请求是否完成？  html代码如下：123456&amp;lt;body&amp;gt;  &amp;lt;div class=&quot;wrap&quot;&amp;gt;    &amp;lt;div class=&quot;loading&quot;&amp;gt;正在加载。。。&amp;lt;/div&amp;gt;    &amp;lt;div class=&quot;imgs&quot;&amp;gt;&amp;lt"><script type="text/javascript" id="hexo.configurations">
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="en, EN, En, wtt, blog" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="问题：  网页中预加载20张图片资源，分布加载，一次加载10张，两次完成，怎么控制图片请求的并发，怎么感知当前异步请求是否完成？  html代码如下：123456&amp;lt;body&amp;gt;  &amp;lt;div class=&quot;wrap&quot;&amp;gt;    &amp;lt;div class=&quot;loading&quot;&amp;gt;正在加载。。。&amp;lt;/div&amp;gt;    &amp;lt;div class=&quot;imgs&quot;&amp;gt;&amp;lt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Promise 异步流程控制">
+<meta property="og:url" content="http://yoursite.com/2017/09/29/Promise-异步流程控制/index.html">
+<meta property="og:site_name" content="Output">
+<meta property="og:description" content="问题：  网页中预加载20张图片资源，分布加载，一次加载10张，两次完成，怎么控制图片请求的并发，怎么感知当前异步请求是否完成？  html代码如下：123456&amp;lt;body&amp;gt;  &amp;lt;div class=&quot;wrap&quot;&amp;gt;    &amp;lt;div class=&quot;loading&quot;&amp;gt;正在加载。。。&amp;lt;/div&amp;gt;    &amp;lt;div class=&quot;imgs&quot;&amp;gt;&amp;lt">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-03T09:45:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Promise 异步流程控制">
+<meta name="twitter:description" content="问题：  网页中预加载20张图片资源，分布加载，一次加载10张，两次完成，怎么控制图片请求的并发，怎么感知当前异步请求是否完成？  html代码如下：123456&amp;lt;body&amp;gt;  &amp;lt;div class=&quot;wrap&quot;&amp;gt;    &amp;lt;div class=&quot;loading&quot;&amp;gt;正在加载。。。&amp;lt;/div&amp;gt;    &amp;lt;div class=&quot;imgs&quot;&amp;gt;&amp;lt">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
@@ -18,7 +118,18 @@
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
-</script><link rel="canonical" href="http://yoursite.com/2017/09/29/Promise-异步流程控制/"><title> Promise 异步流程控制 | Output</title><style>
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/29/Promise-异步流程控制/"/>
+
+
+
+
+
+  <title> Promise 异步流程控制 | Output </title>
+  <style>
     #particles-js{
       width: 100%;
       height: 100%;
@@ -30,11 +141,524 @@
       left: 0;
       z-index: -1;
     }
-  </style></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container one-collumn sidebar-position-left page-post-detail"><div id="particles-js"></div><div class="headband"></div> <a href="https://github.com/weitongtong"><img style="position: absolute; top: 0; right: 0; border: 0" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Output</span><span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle">output</p></div><div class="site-nav-toggle"> <button><span class="btn-bar"></span><span class="btn-bar"></span><span class="btn-bar"></span></button></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/custom" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br> 首页</a></li><li class="menu-item menu-item-about"><a href="/custom" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br> 关于</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br> 归档</a></li><li class="menu-item menu-item-gitbook"><a href="/gitbook" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i><br> gitbook</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br> 搜索</a></li></ul><div class="site-search"><div class="popup"><span class="search-icon fa fa-search"></span> <input type="text" id="local-search-input"><div id="local-search-result"></div><span class="popup-btn-close"><i class="fa fa-times" style="font-size: 18px; margin-top: 10px" aria-hidden="true"></i></span></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/29/Promise-异步流程控制/"><span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="weitongtong"><meta itemprop="description" content=""><meta itemprop="image" content="/images/tx.png"></span><span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Output"> <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject"><img style="display:none" itemprop="url image" alt="Output" src=""></span></span><header class="post-header"><h1 class="post-title" itemprop="name headline"> Promise 异步流程控制</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-29T15:21:17+08:00">2017-09-29</time></span></div></header><div class="post-body" itemprop="articleBody"><p>问题：</p><blockquote><p>网页中预加载20张图片资源，分布加载，一次加载10张，两次完成，怎么控制图片请求的并发，怎么感知当前异步请求是否完成？</p></blockquote><p>html代码如下：<br></p><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"loading"</span>&gt;</span>正在加载。。。<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"imgs"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure><p></p><a id="more"></a><h4 id="单一请求"><a href="#单一请求" class="headerlink" title="单一请求"></a>单一请求</h4><p>最简单的，就是将异步一个个来处理，转为一个类似同步的方式来处理。<br>先来简单的实现一个单个 Image 来加载的 thenable 函数和一个处理函数返回结果的函数<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadImg</span>(<span class="params">url</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">const</span> img = <span class="keyword">new</span> Image()</div><div class="line">    img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      resolve(img)</div><div class="line">    &#125;</div><div class="line">    img.onerror = reject</div><div class="line">    img.src = url</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p><p>异步转同步的解决思路是：当第一个 <code>loadImg(urls[0])</code> 完成后再调用 <code>loadImg(urls[1])</code>，依次往下。</p><p>这里通过 Promise chain (其实就是一直then()下去)来实现：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> promise = <span class="built_in">Promise</span>.resolve() <span class="comment">// 用一个中间变量来存储当前的 promise，就像链表的游标一样。</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; urls.length; i++) &#123;</div><div class="line">  promise = promise</div><div class="line">    .then(<span class="function"><span class="params">()</span> =&gt;</span> loadImg(urls[i]))</div><div class="line">    .then(addToHtml)</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p><p>promise 变量就像一个迭代器，不断指向最新的放回的 Promise，进一步使用 reduce 来简化：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">urls.reduce(<span class="function">(<span class="params">promise, url</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> promise</div><div class="line">    .then(<span class="function"><span class="params">()</span> =&gt;</span> loadImg(url))</div><div class="line">    .then(addToHtml)</div><div class="line">&#125;, <span class="built_in">Promise</span>.resolve())</div></pre></td></tr></table></figure><p></p><p>当然，我们也可以改成递归的形式来实现：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">syncLoad</span>(<span class="params">index</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (index &gt;= urls.length) <span class="keyword">return</span></div><div class="line">  loadImg(urls[index])</div><div class="line">    .then(<span class="function"><span class="params">img</span> =&gt;</span> &#123;</div><div class="line">      <span class="comment">// do something</span></div><div class="line">      addToHtml(img)</div><div class="line">      syncLoad(index + <span class="number">1</span>)</div><div class="line">    &#125;)</div><div class="line">&#125;</div><div class="line"><span class="comment">// 调用</span></div><div class="line">syncLoad(<span class="number">0</span>)</div></pre></td></tr></table></figure><p></p><p>好了 一个简单的异步转同步的实现方式就已经完成了。但还需要在递归结束的时候，隐藏loading。<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">syncLoad</span>(<span class="params">index</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (index &gt;= urls.length) <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve()</div><div class="line">  <span class="keyword">return</span> loadImg(urls[index])</div><div class="line">    .then(<span class="function"><span class="params">img</span> =&gt;</span> &#123;</div><div class="line">      addToHtml(img)</div><div class="line">      <span class="keyword">return</span> syncLoad(index + <span class="number">1</span>)</div><div class="line">    &#125;)</div><div class="line">&#125;</div><div class="line"><span class="comment">// 调用</span></div><div class="line">syncLoad(<span class="number">0</span>)</div><div class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">document</span>.querySelector(<span class="string">'.loading'</span>).style.display = <span class="string">'none'</span></div><div class="line">  &#125;)</div></pre></td></tr></table></figure><p></p><p>现在我们再来完善一下这个函数，让它更加通用。<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * @param &#123;Function&#125; fn 异步函数 - loadImg</span></div><div class="line"><span class="comment"> * @param &#123;Array&#125; arr 异步函数需要的参数 - urls</span></div><div class="line"><span class="comment"> * @param &#123;Function&#125; handler 异步函数的回调 - addToHtml</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">syncLoad</span>(<span class="params">fn, arr, handler</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> fn !== <span class="string">'function'</span>) <span class="keyword">throw</span> <span class="built_in">TypeError</span>(<span class="string">'第一个参数必须是函数'</span>)</div><div class="line">  <span class="keyword">if</span> (!<span class="built_in">Array</span>.isArray(arr)) <span class="keyword">throw</span> <span class="built_in">TypeError</span>(<span class="string">'第二个参数必须是数组'</span>)</div><div class="line">  handler = <span class="keyword">typeof</span> handler === <span class="string">'function'</span> ? handler : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"></div><div class="line">  <span class="keyword">const</span> errors = []</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">load</span>(<span class="params">index</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (index &gt;= arr.length) &#123;</div><div class="line">      <span class="keyword">return</span> errors.length &gt; <span class="number">0</span> ? <span class="built_in">Promise</span>.reject(errors) : <span class="built_in">Promise</span>.resolve()</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> fn(arr[index])</div><div class="line">      .then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</div><div class="line">        handler(data)</div><div class="line">      &#125;)</div><div class="line">      .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(err)</div><div class="line">        errors.push(arr[index])</div><div class="line">        <span class="keyword">return</span> load(index + <span class="number">1</span>)</div><div class="line">      &#125;)</div><div class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        <span class="keyword">return</span> load(index + <span class="number">1</span>)</div><div class="line">      &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> load(<span class="number">0</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 调用</span></div><div class="line">syncLoad(loadImg, urls, addToHtml)</div><div class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">document</span>.querySelector(<span class="string">'.loading'</span>).style.display = <span class="string">'none'</span></div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="built_in">console</span>.log)</div></pre></td></tr></table></figure><p></p><p>当然这种异步转同步的方式在这一个例子中并不是最好的做法，但当有何时的业务场景时，这是很常见的解决方案。</p><h4 id="并发请求"><a href="#并发请求" class="headerlink" title="并发请求"></a>并发请求</h4><p>使用 Promise.all</p><blockquote><p>Promise.all(iterable) 方法指当所有在可迭代参数中的 promises 已完成，或者第一个传递的 promise（指 reject）失败时，返回 promise。</p></blockquote><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> promises = urls.map(loadImg)</div><div class="line"><span class="built_in">Promise</span>.all(promises)</div><div class="line">  .then(<span class="function"><span class="params">imgs</span> =&gt;</span> &#123;</div><div class="line">    imgs.forEach(addToHtml)</div><div class="line">    <span class="built_in">document</span>.querySelector(<span class="string">'.loading'</span>).style.display = <span class="string">'none'</span></div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.error(err, <span class="string">'Promise.all 当其中一个出现错误，就会reject。'</span>)</div><div class="line">  &#125;)</div></pre></td></tr></table></figure><h4 id="并发请求，按顺序处理结果"><a href="#并发请求，按顺序处理结果" class="headerlink" title="并发请求，按顺序处理结果"></a>并发请求，按顺序处理结果</h4><p>webapp 里常用的资源预加载，可能加载的是 20 张逐帧图片，当网络出现问题， 20 张图难免会有一两张请求失败，如果失败后，直接抛弃其他被 resolve 的返回结果，似乎有点不妥，我们只要知道哪些图片出错了，把出错的图片再做一次请求或着用占位图补上就好。<br>上节中的代码 <code>const promises = urls.map(loadImg)</code> 运行后，全部都图片请求都已经发出去了，我们只要按顺序挨个处理 promises 这个数组中的 Promise 实例就好了。<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> promises = urls.map(loadImg)</div><div class="line"><span class="keyword">let</span> task = <span class="built_in">Promise</span>.resolve()</div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; promises.length; i++) &#123;</div><div class="line">  task = task.then(<span class="function"><span class="params">()</span> =&gt;</span> promises[i]).then(addToHtml)</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p><p>reduce 版本<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> promises = urls.map(loadImg)</div><div class="line">promises.reduce(<span class="function">(<span class="params">task, imgPromise</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> task().then(<span class="function"><span class="params">()</span> =&gt;</span> imgPromise).then(addToHtml)</div><div class="line">&#125;, <span class="built_in">Promise</span>.resolve())</div></pre></td></tr></table></figure><p></p><h4 id="控制最大并发数"><a href="#控制最大并发数" class="headerlink" title="控制最大并发数"></a>控制最大并发数</h4><p>现在我们来试着完成一下上面的问题，这个其实都不需要控制最大并发数。<br>20张图，分两次加载，那用两个 Promise.all 不就解决了？但是用 Promise.all 没办法侦听到每一张图片加载完成的事件。而用上一节的方法，我们既能并发请求，又能按顺序响应图片加载完成的事件。<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> index = <span class="number">0</span></div><div class="line"><span class="keyword">const</span> step1 = [], step2 = []</div><div class="line"></div><div class="line"><span class="keyword">while</span>(index &lt; <span class="number">10</span>) &#123;</div><div class="line">  step1.push(loadImg(<span class="string">`./images/pic/<span class="subst">$&#123;index&#125;</span>.jpg`</span>))</div><div class="line">  index += <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">step1.reduce(<span class="function">(<span class="params">task, imgPromise, i</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> task</div><div class="line">    .then(<span class="function"><span class="params">()</span> =&gt;</span> imgPromise)</div><div class="line">    .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">`第 <span class="subst">$&#123;i + <span class="number">1</span>&#125;</span> 张图片加载完成.`</span>)</div><div class="line">    &#125;)</div><div class="line">&#125;, <span class="built_in">Promise</span>.resolve())</div><div class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'&gt;&gt; 前面10张已经加载完！'</span>)</div><div class="line">  &#125;)</div><div class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">while</span>(index &lt; <span class="number">20</span>) &#123;</div><div class="line">      step2.push(loadImg(<span class="string">`./images/pic/<span class="subst">$&#123;index&#125;</span>.jpg`</span>))</div><div class="line">      index += <span class="number">1</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> step2.reduce(<span class="function">(<span class="params">task, imgPromise, i</span>) =&gt;</span> &#123;</div><div class="line">      <span class="keyword">return</span> task</div><div class="line">        .then(<span class="function"><span class="params">()</span> =&gt;</span> imgPromise)</div><div class="line">        .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">`第 <span class="subst">$&#123;i + <span class="number">11</span>&#125;</span> 张图片加载完成.`</span>)</div><div class="line">        &#125;)</div><div class="line">    &#125;, <span class="built_in">Promise</span>.resolve())</div><div class="line">  &#125;)</div><div class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'&gt;&gt; 后面10张已经加载完'</span>)</div><div class="line">  &#125;)</div></pre></td></tr></table></figure><p></p><p>抽象一下代码，写一个通用的方法:<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">stepLoad</span> (<span class="params">urls, handler, stepNum</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> createPromises = <span class="function"><span class="keyword">function</span> (<span class="params">now, stepNum</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> last = <span class="built_in">Math</span>.min(stepNum + now, urls.length)</div><div class="line">    <span class="keyword">return</span> urls.slice(now, last).map(handler)</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">let</span> step = <span class="built_in">Promise</span>.resolve()</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; urls.length; i += stepNum) &#123;</div><div class="line">    step = step</div><div class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        <span class="keyword">let</span> promises = createPromises(i, stepNum)</div><div class="line">        <span class="keyword">return</span> promises.reduce(<span class="function">(<span class="params">task, imgPromise, index</span>) =&gt;</span> &#123;</div><div class="line">          <span class="keyword">return</span> task</div><div class="line">            .then(<span class="function"><span class="params">()</span> =&gt;</span> imgPromise)</div><div class="line">            .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">              <span class="built_in">console</span>.log(<span class="string">`第 <span class="subst">$&#123;index + <span class="number">1</span> + i&#125;</span> 张图片加载完成.`</span>)</div><div class="line">            &#125;)</div><div class="line">        &#125;, <span class="built_in">Promise</span>.resolve())</div><div class="line">      &#125;)</div><div class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        <span class="keyword">let</span> current = <span class="built_in">Math</span>.min(i + stepNum, urls.length)</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">`&gt;&gt; 总共<span class="subst">$&#123;current&#125;</span>张已经加载完！`</span>)</div><div class="line">      &#125;)</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> step</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p><p>但上面的实现和我们说的最大并发数控制没什么关系啊，最大并发数控制是指：当加载 20 张图片加载的时候，先并发请求 10 张图片，当一张图片加载完成后，又会继续发起一张图片的请求，让并发数保持在 10 个，直到需要加载的图片都全部发起请求。这个在写爬虫中可以说是比较常见的使用场景了。<br>实现方式：使用递归<br>假设我们的最大并发数是 4 ，这种方法的主要思想是相当于 4 个单一请求的 Promise 异步任务在同时运行运行，4 个单一请求不断递归取图片 URL 数组中的 URL 发起请求，直到 URL 全部取完，最后再使用 Promise.all 来处理最后还在请求中的异步任务，我们复用第二节递归版本的思路来实现这个功能：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">limitLoad</span> (<span class="params">urls, handler, limit</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> sequence = [].concat(urls) <span class="comment">// 对数组做一个拷贝</span></div><div class="line">  <span class="keyword">let</span> count = <span class="number">0</span></div><div class="line">  <span class="keyword">const</span> promises = []</div><div class="line"></div><div class="line">  <span class="keyword">const</span> load = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (sequence.length &lt;= <span class="number">0</span> || count &gt; limit) <span class="keyword">return</span> </div><div class="line">    count += <span class="number">1</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">`当前并发数: <span class="subst">$&#123;count&#125;</span>`</span>)</div><div class="line">    <span class="keyword">return</span> handler(sequence.shift())</div><div class="line">      .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">        <span class="built_in">console</span>.error(err)</div><div class="line">      &#125;)</div><div class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        count -= <span class="number">1</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="string">`当前并发数：<span class="subst">$&#123;count&#125;</span>`</span>)</div><div class="line">      &#125;)</div><div class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> load())</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; limit &amp;&amp; i &lt; sequence.length; i++)&#123;</div><div class="line">    promises.push(load())</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.all(promises)</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p><p><a href="https://juejin.im/post/59cdb6526fb9a00a4e67c7fb" target="_blank" rel="external">link</a></p></div><div></div><div></div><footer class="post-footer"><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/2017/09/29/Cookie/" rel="next" title="Cookie"><i class="fa fa-chevron-left"></i> Cookie</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"> <a href="/2017/10/01/git命令清单/" rel="prev" title="git命令清单">git命令清单<i class="fa fa-chevron-right"></i></a></div></div></footer></article><div class="post-spread"></div></div></div><div class="comments" id="comments"></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap"> 文章目录</li><li class="sidebar-nav-overview" data-target="site-overview"> 站点概览</li></ul><section class="site-overview sidebar-panel"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"> <img class="site-author-image" itemprop="image" src="/images/tx.png" alt="weitongtong"><p class="site-author-name" itemprop="name">weitongtong</p><p class="site-description motion-element" itemprop="description">长亭外，古道边，芳草碧连天</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"> <a href="/archives"><span class="site-state-item-count">34</span> <span class="site-state-item-name">日志</span></a></div></nav><div class="links-of-author motion-element"></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#单一请求"><span class="nav-number">1.</span> <span class="nav-text">单一请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#并发请求"><span class="nav-number">2.</span> <span class="nav-text">并发请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#并发请求，按顺序处理结果"><span class="nav-number">3.</span> <span class="nav-text">并发请求，按顺序处理结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#控制最大并发数"><span class="nav-number">4.</span> <span class="nav-text">控制最大并发数</span></a></li></ol></div></div></section></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright"> &copy; <span itemprop="copyrightYear">2017</span><span class="with-love"><i class="fa fa-heart"></i></span> <span class="author" itemprop="copyrightHolder">weitongtong</span></div> <span id="busuanzi_container_site_pv" class="powered-by">pv:<span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv">uv:<span id="busuanzi_value_site_uv"></span></span><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i></div></div><script type="text/javascript">
+  </style>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div id="particles-js"></div>
+    <div class="headband"></div>
+    <a href="https://github.com/weitongtong"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Output</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">output</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/custom" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/custom" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-gitbook">
+          <a href="/gitbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            gitbook
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">
+  <i class="fa fa-times" style="font-size: 18px; margin-top: 10px;" aria-hidden="true"></i>
+</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/29/Promise-异步流程控制/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="weitongtong">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/tx.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Output">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Output" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Promise 异步流程控制
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-29T15:21:17+08:00">
+                2017-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>问题：</p>
+<blockquote>
+<p>网页中预加载20张图片资源，分布加载，一次加载10张，两次完成，怎么控制图片请求的并发，怎么感知当前异步请求是否完成？</p>
+</blockquote>
+<p>html代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"loading"</span>&gt;</span>正在加载。。。<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"imgs"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h4 id="单一请求"><a href="#单一请求" class="headerlink" title="单一请求"></a>单一请求</h4><p>最简单的，就是将异步一个个来处理，转为一个类似同步的方式来处理。<br>先来简单的实现一个单个 Image 来加载的 thenable 函数和一个处理函数返回结果的函数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadImg</span>(<span class="params">url</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">const</span> img = <span class="keyword">new</span> Image()</div><div class="line">    img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      resolve(img)</div><div class="line">    &#125;</div><div class="line">    img.onerror = reject</div><div class="line">    img.src = url</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>异步转同步的解决思路是：当第一个 <code>loadImg(urls[0])</code> 完成后再调用 <code>loadImg(urls[1])</code>，依次往下。</p>
+<p>这里通过 Promise chain (其实就是一直then()下去)来实现：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> promise = <span class="built_in">Promise</span>.resolve() <span class="comment">// 用一个中间变量来存储当前的 promise，就像链表的游标一样。</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; urls.length; i++) &#123;</div><div class="line">  promise = promise</div><div class="line">    .then(<span class="function"><span class="params">()</span> =&gt;</span> loadImg(urls[i]))</div><div class="line">    .then(addToHtml)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>promise 变量就像一个迭代器，不断指向最新的放回的 Promise，进一步使用 reduce 来简化：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">urls.reduce(<span class="function">(<span class="params">promise, url</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> promise</div><div class="line">    .then(<span class="function"><span class="params">()</span> =&gt;</span> loadImg(url))</div><div class="line">    .then(addToHtml)</div><div class="line">&#125;, <span class="built_in">Promise</span>.resolve())</div></pre></td></tr></table></figure></p>
+<p>当然，我们也可以改成递归的形式来实现：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">syncLoad</span>(<span class="params">index</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (index &gt;= urls.length) <span class="keyword">return</span></div><div class="line">  loadImg(urls[index])</div><div class="line">    .then(<span class="function"><span class="params">img</span> =&gt;</span> &#123;</div><div class="line">      <span class="comment">// do something</span></div><div class="line">      addToHtml(img)</div><div class="line">      syncLoad(index + <span class="number">1</span>)</div><div class="line">    &#125;)</div><div class="line">&#125;</div><div class="line"><span class="comment">// 调用</span></div><div class="line">syncLoad(<span class="number">0</span>)</div></pre></td></tr></table></figure></p>
+<p>好了 一个简单的异步转同步的实现方式就已经完成了。但还需要在递归结束的时候，隐藏loading。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">syncLoad</span>(<span class="params">index</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (index &gt;= urls.length) <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve()</div><div class="line">  <span class="keyword">return</span> loadImg(urls[index])</div><div class="line">    .then(<span class="function"><span class="params">img</span> =&gt;</span> &#123;</div><div class="line">      addToHtml(img)</div><div class="line">      <span class="keyword">return</span> syncLoad(index + <span class="number">1</span>)</div><div class="line">    &#125;)</div><div class="line">&#125;</div><div class="line"><span class="comment">// 调用</span></div><div class="line">syncLoad(<span class="number">0</span>)</div><div class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">document</span>.querySelector(<span class="string">'.loading'</span>).style.display = <span class="string">'none'</span></div><div class="line">  &#125;)</div></pre></td></tr></table></figure></p>
+<p>现在我们再来完善一下这个函数，让它更加通用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * @param &#123;Function&#125; fn 异步函数 - loadImg</span></div><div class="line"><span class="comment"> * @param &#123;Array&#125; arr 异步函数需要的参数 - urls</span></div><div class="line"><span class="comment"> * @param &#123;Function&#125; handler 异步函数的回调 - addToHtml</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">syncLoad</span>(<span class="params">fn, arr, handler</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> fn !== <span class="string">'function'</span>) <span class="keyword">throw</span> <span class="built_in">TypeError</span>(<span class="string">'第一个参数必须是函数'</span>)</div><div class="line">  <span class="keyword">if</span> (!<span class="built_in">Array</span>.isArray(arr)) <span class="keyword">throw</span> <span class="built_in">TypeError</span>(<span class="string">'第二个参数必须是数组'</span>)</div><div class="line">  handler = <span class="keyword">typeof</span> handler === <span class="string">'function'</span> ? handler : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"></div><div class="line">  <span class="keyword">const</span> errors = []</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">load</span>(<span class="params">index</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (index &gt;= arr.length) &#123;</div><div class="line">      <span class="keyword">return</span> errors.length &gt; <span class="number">0</span> ? <span class="built_in">Promise</span>.reject(errors) : <span class="built_in">Promise</span>.resolve()</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> fn(arr[index])</div><div class="line">      .then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</div><div class="line">        handler(data)</div><div class="line">      &#125;)</div><div class="line">      .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(err)</div><div class="line">        errors.push(arr[index])</div><div class="line">        <span class="keyword">return</span> load(index + <span class="number">1</span>)</div><div class="line">      &#125;)</div><div class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        <span class="keyword">return</span> load(index + <span class="number">1</span>)</div><div class="line">      &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> load(<span class="number">0</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 调用</span></div><div class="line">syncLoad(loadImg, urls, addToHtml)</div><div class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">document</span>.querySelector(<span class="string">'.loading'</span>).style.display = <span class="string">'none'</span></div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="built_in">console</span>.log)</div></pre></td></tr></table></figure></p>
+<p>当然这种异步转同步的方式在这一个例子中并不是最好的做法，但当有何时的业务场景时，这是很常见的解决方案。</p>
+<h4 id="并发请求"><a href="#并发请求" class="headerlink" title="并发请求"></a>并发请求</h4><p>使用 Promise.all</p>
+<blockquote>
+<p>Promise.all(iterable) 方法指当所有在可迭代参数中的 promises 已完成，或者第一个传递的 promise（指 reject）失败时，返回 promise。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> promises = urls.map(loadImg)</div><div class="line"><span class="built_in">Promise</span>.all(promises)</div><div class="line">  .then(<span class="function"><span class="params">imgs</span> =&gt;</span> &#123;</div><div class="line">    imgs.forEach(addToHtml)</div><div class="line">    <span class="built_in">document</span>.querySelector(<span class="string">'.loading'</span>).style.display = <span class="string">'none'</span></div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.error(err, <span class="string">'Promise.all 当其中一个出现错误，就会reject。'</span>)</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
+<h4 id="并发请求，按顺序处理结果"><a href="#并发请求，按顺序处理结果" class="headerlink" title="并发请求，按顺序处理结果"></a>并发请求，按顺序处理结果</h4><p>webapp 里常用的资源预加载，可能加载的是 20 张逐帧图片，当网络出现问题， 20 张图难免会有一两张请求失败，如果失败后，直接抛弃其他被 resolve 的返回结果，似乎有点不妥，我们只要知道哪些图片出错了，把出错的图片再做一次请求或着用占位图补上就好。<br>上节中的代码 <code>const promises = urls.map(loadImg)</code> 运行后，全部都图片请求都已经发出去了，我们只要按顺序挨个处理 promises 这个数组中的 Promise 实例就好了。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> promises = urls.map(loadImg)</div><div class="line"><span class="keyword">let</span> task = <span class="built_in">Promise</span>.resolve()</div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; promises.length; i++) &#123;</div><div class="line">  task = task.then(<span class="function"><span class="params">()</span> =&gt;</span> promises[i]).then(addToHtml)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>reduce 版本<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> promises = urls.map(loadImg)</div><div class="line">promises.reduce(<span class="function">(<span class="params">task, imgPromise</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> task().then(<span class="function"><span class="params">()</span> =&gt;</span> imgPromise).then(addToHtml)</div><div class="line">&#125;, <span class="built_in">Promise</span>.resolve())</div></pre></td></tr></table></figure></p>
+<h4 id="控制最大并发数"><a href="#控制最大并发数" class="headerlink" title="控制最大并发数"></a>控制最大并发数</h4><p>现在我们来试着完成一下上面的问题，这个其实都不需要控制最大并发数。<br>20张图，分两次加载，那用两个 Promise.all 不就解决了？但是用 Promise.all 没办法侦听到每一张图片加载完成的事件。而用上一节的方法，我们既能并发请求，又能按顺序响应图片加载完成的事件。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> index = <span class="number">0</span></div><div class="line"><span class="keyword">const</span> step1 = [], step2 = []</div><div class="line"></div><div class="line"><span class="keyword">while</span>(index &lt; <span class="number">10</span>) &#123;</div><div class="line">  step1.push(loadImg(<span class="string">`./images/pic/<span class="subst">$&#123;index&#125;</span>.jpg`</span>))</div><div class="line">  index += <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">step1.reduce(<span class="function">(<span class="params">task, imgPromise, i</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> task</div><div class="line">    .then(<span class="function"><span class="params">()</span> =&gt;</span> imgPromise)</div><div class="line">    .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">`第 <span class="subst">$&#123;i + <span class="number">1</span>&#125;</span> 张图片加载完成.`</span>)</div><div class="line">    &#125;)</div><div class="line">&#125;, <span class="built_in">Promise</span>.resolve())</div><div class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'&gt;&gt; 前面10张已经加载完！'</span>)</div><div class="line">  &#125;)</div><div class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">while</span>(index &lt; <span class="number">20</span>) &#123;</div><div class="line">      step2.push(loadImg(<span class="string">`./images/pic/<span class="subst">$&#123;index&#125;</span>.jpg`</span>))</div><div class="line">      index += <span class="number">1</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> step2.reduce(<span class="function">(<span class="params">task, imgPromise, i</span>) =&gt;</span> &#123;</div><div class="line">      <span class="keyword">return</span> task</div><div class="line">        .then(<span class="function"><span class="params">()</span> =&gt;</span> imgPromise)</div><div class="line">        .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">`第 <span class="subst">$&#123;i + <span class="number">11</span>&#125;</span> 张图片加载完成.`</span>)</div><div class="line">        &#125;)</div><div class="line">    &#125;, <span class="built_in">Promise</span>.resolve())</div><div class="line">  &#125;)</div><div class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'&gt;&gt; 后面10张已经加载完'</span>)</div><div class="line">  &#125;)</div></pre></td></tr></table></figure></p>
+<p>抽象一下代码，写一个通用的方法:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">stepLoad</span> (<span class="params">urls, handler, stepNum</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> createPromises = <span class="function"><span class="keyword">function</span> (<span class="params">now, stepNum</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> last = <span class="built_in">Math</span>.min(stepNum + now, urls.length)</div><div class="line">    <span class="keyword">return</span> urls.slice(now, last).map(handler)</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">let</span> step = <span class="built_in">Promise</span>.resolve()</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; urls.length; i += stepNum) &#123;</div><div class="line">    step = step</div><div class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        <span class="keyword">let</span> promises = createPromises(i, stepNum)</div><div class="line">        <span class="keyword">return</span> promises.reduce(<span class="function">(<span class="params">task, imgPromise, index</span>) =&gt;</span> &#123;</div><div class="line">          <span class="keyword">return</span> task</div><div class="line">            .then(<span class="function"><span class="params">()</span> =&gt;</span> imgPromise)</div><div class="line">            .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">              <span class="built_in">console</span>.log(<span class="string">`第 <span class="subst">$&#123;index + <span class="number">1</span> + i&#125;</span> 张图片加载完成.`</span>)</div><div class="line">            &#125;)</div><div class="line">        &#125;, <span class="built_in">Promise</span>.resolve())</div><div class="line">      &#125;)</div><div class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        <span class="keyword">let</span> current = <span class="built_in">Math</span>.min(i + stepNum, urls.length)</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">`&gt;&gt; 总共<span class="subst">$&#123;current&#125;</span>张已经加载完！`</span>)</div><div class="line">      &#125;)</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> step</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>但上面的实现和我们说的最大并发数控制没什么关系啊，最大并发数控制是指：当加载 20 张图片加载的时候，先并发请求 10 张图片，当一张图片加载完成后，又会继续发起一张图片的请求，让并发数保持在 10 个，直到需要加载的图片都全部发起请求。这个在写爬虫中可以说是比较常见的使用场景了。<br>实现方式：使用递归<br>假设我们的最大并发数是 4 ，这种方法的主要思想是相当于 4 个单一请求的 Promise 异步任务在同时运行运行，4 个单一请求不断递归取图片 URL 数组中的 URL 发起请求，直到 URL 全部取完，最后再使用 Promise.all 来处理最后还在请求中的异步任务，我们复用第二节递归版本的思路来实现这个功能：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">limitLoad</span> (<span class="params">urls, handler, limit</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> sequence = [].concat(urls) <span class="comment">// 对数组做一个拷贝</span></div><div class="line">  <span class="keyword">let</span> count = <span class="number">0</span></div><div class="line">  <span class="keyword">const</span> promises = []</div><div class="line"></div><div class="line">  <span class="keyword">const</span> load = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (sequence.length &lt;= <span class="number">0</span> || count &gt; limit) <span class="keyword">return</span> </div><div class="line">    count += <span class="number">1</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">`当前并发数: <span class="subst">$&#123;count&#125;</span>`</span>)</div><div class="line">    <span class="keyword">return</span> handler(sequence.shift())</div><div class="line">      .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">        <span class="built_in">console</span>.error(err)</div><div class="line">      &#125;)</div><div class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        count -= <span class="number">1</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="string">`当前并发数：<span class="subst">$&#123;count&#125;</span>`</span>)</div><div class="line">      &#125;)</div><div class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> load())</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; limit &amp;&amp; i &lt; sequence.length; i++)&#123;</div><div class="line">    promises.push(load())</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.all(promises)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a href="https://juejin.im/post/59cdb6526fb9a00a4e67c7fb" target="_blank" rel="external">link</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/29/Cookie/" rel="next" title="Cookie">
+                <i class="fa fa-chevron-left"></i> Cookie
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/01/git命令清单/" rel="prev" title="git命令清单">
+                git命令清单 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/tx.png"
+               alt="weitongtong" />
+          <p class="site-author-name" itemprop="name">weitongtong</p>
+          <p class="site-description motion-element" itemprop="description">长亭外，古道边，芳草碧连天</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">35</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#单一请求"><span class="nav-number">1.</span> <span class="nav-text">单一请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#并发请求"><span class="nav-number">2.</span> <span class="nav-text">并发请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#并发请求，按顺序处理结果"><span class="nav-number">3.</span> <span class="nav-text">并发请求，按顺序处理结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#控制最大并发数"><span class="nav-number">4.</span> <span class="nav-text">控制最大并发数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">weitongtong</span>
+</div>
+
+<span id="busuanzi_container_site_pv" class="powered-by">
+  pv: <span id="busuanzi_value_site_pv"></span>
+</span>
+<span id="busuanzi_container_site_uv">
+  uv: <span id="busuanzi_value_site_uv"></span>
+</span>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
-</script><script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script><script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script><script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script><script type="text/javascript">
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+  
+  
+  <script type="text/javascript">
     // Popup Window;
     var isfetched = false;
     // Search DB path;
@@ -163,4 +787,20 @@
     $('.popup').click(function(e){
       e.stopPropagation();
     });
-  </script><script type="text/javascript" src="/js/src/particle.min.js"></script><script type="text/javascript" src="/js/src/main.js"></script></body></html>
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/particle.min.js"></script>
+  <script type="text/javascript" src="/js/src/main.js"></script>
+
+</body>
+</html>

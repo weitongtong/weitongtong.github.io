@@ -1,4 +1,104 @@
-<!doctype html><html class="theme-next mist use-motion" lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css"><meta name="keywords" content="en, EN, En, wtt, blog"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0"><meta name="description" content="wepack build之后会产生3个js文件：  app.js 是入口js,具体业务代码（我们的src下的） vendor.js 通过提取公共模块插件来提取的代码块（node_modules） manifest.js 在vendor的基础上，再抽取出要经常变动的部分。   至于manifest的话，主要是一些异步加载的实现方法（通过建立script方式动态引入js），内容上包含异步js的文件名和"><meta property="og:type" content="article"><meta property="og:title" content="vue-cli相关"><meta property="og:url" content="http://yoursite.com/2017/10/13/vue-cli相关/index.html"><meta property="og:site_name" content="Output"><meta property="og:description" content="wepack build之后会产生3个js文件：  app.js 是入口js,具体业务代码（我们的src下的） vendor.js 通过提取公共模块插件来提取的代码块（node_modules） manifest.js 在vendor的基础上，再抽取出要经常变动的部分。   至于manifest的话，主要是一些异步加载的实现方法（通过建立script方式动态引入js），内容上包含异步js的文件名和"><meta property="og:locale" content="zh-Hans"><meta property="og:updated_time" content="2017-10-13T10:45:50.000Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="vue-cli相关"><meta name="twitter:description" content="wepack build之后会产生3个js文件：  app.js 是入口js,具体业务代码（我们的src下的） vendor.js 通过提取公共模块插件来提取的代码块（node_modules） manifest.js 在vendor的基础上，再抽取出要经常变动的部分。   至于manifest的话，主要是一些异步加载的实现方法（通过建立script方式动态引入js），内容上包含异步js的文件名和"><script type="text/javascript" id="hexo.configurations">
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="en, EN, En, wtt, blog" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="wepack build之后会产生3个js文件：  app.js 是入口js,具体业务代码（我们的src下的） vendor.js 通过提取公共模块插件来提取的代码块（node_modules） manifest.js 在vendor的基础上，再抽取出要经常变动的部分。   至于manifest的话，主要是一些异步加载的实现方法（通过建立script方式动态引入js），内容上包含异步js的文件名和">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-cli相关">
+<meta property="og:url" content="http://yoursite.com/2017/10/13/vue-cli相关/index.html">
+<meta property="og:site_name" content="Output">
+<meta property="og:description" content="wepack build之后会产生3个js文件：  app.js 是入口js,具体业务代码（我们的src下的） vendor.js 通过提取公共模块插件来提取的代码块（node_modules） manifest.js 在vendor的基础上，再抽取出要经常变动的部分。   至于manifest的话，主要是一些异步加载的实现方法（通过建立script方式动态引入js），内容上包含异步js的文件名和">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-13T10:45:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue-cli相关">
+<meta name="twitter:description" content="wepack build之后会产生3个js文件：  app.js 是入口js,具体业务代码（我们的src下的） vendor.js 通过提取公共模块插件来提取的代码块（node_modules） manifest.js 在vendor的基础上，再抽取出要经常变动的部分。   至于manifest的话，主要是一些异步加载的实现方法（通过建立script方式动态引入js），内容上包含异步js的文件名和">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
@@ -18,7 +118,18 @@
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
-</script><link rel="canonical" href="http://yoursite.com/2017/10/13/vue-cli相关/"><title> vue-cli相关 | Output</title><style>
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/13/vue-cli相关/"/>
+
+
+
+
+
+  <title> vue-cli相关 | Output </title>
+  <style>
     #particles-js{
       width: 100%;
       height: 100%;
@@ -30,11 +141,545 @@
       left: 0;
       z-index: -1;
     }
-  </style></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container one-collumn sidebar-position-left page-post-detail"><div id="particles-js"></div><div class="headband"></div> <a href="https://github.com/weitongtong"><img style="position: absolute; top: 0; right: 0; border: 0" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Output</span><span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle">output</p></div><div class="site-nav-toggle"> <button><span class="btn-bar"></span><span class="btn-bar"></span><span class="btn-bar"></span></button></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/custom" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br> 首页</a></li><li class="menu-item menu-item-about"><a href="/custom" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br> 关于</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br> 归档</a></li><li class="menu-item menu-item-gitbook"><a href="/gitbook" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i><br> gitbook</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br> 搜索</a></li></ul><div class="site-search"><div class="popup"><span class="search-icon fa fa-search"></span> <input type="text" id="local-search-input"><div id="local-search-result"></div><span class="popup-btn-close"><i class="fa fa-times" style="font-size: 18px; margin-top: 10px" aria-hidden="true"></i></span></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/13/vue-cli相关/"><span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="weitongtong"><meta itemprop="description" content=""><meta itemprop="image" content="/images/tx.png"></span><span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Output"> <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject"><img style="display:none" itemprop="url image" alt="Output" src=""></span></span><header class="post-header"><h1 class="post-title" itemprop="name headline"> vue-cli相关</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-13T16:49:29+08:00">2017-10-13</time></span></div></header><div class="post-body" itemprop="articleBody"><p>wepack build之后会产生3个js文件：</p><ul><li>app.js 是入口js,具体业务代码（我们的src下的）</li><li>vendor.js 通过提取公共模块插件来提取的代码块（node_modules）</li><li>manifest.js 在vendor的基础上，再抽取出要经常变动的部分。</li></ul><blockquote><p>至于manifest的话，主要是一些异步加载的实现方法（通过建立script方式动态引入js），内容上包含异步js的文件名和路径。<br>主要是js的改动会改变异步加载里面的js文件名，频繁的变动，而相对来说vue库之类的代码，实际上只要编译打包一次就够了，如果只是打包成一个vendor的话，经常变动js会导致vendor重复编译，有点浪费，所以把会重复跟随变动的部分抽离出来作为manifest文件。</p></blockquote><p>以下是webpack.prod.js的配置：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</div><div class="line">  name: <span class="string">'vendor'</span>,</div><div class="line">  minChunks: <span class="function"><span class="keyword">function</span> (<span class="params">module, count</span>) </span>&#123;</div><div class="line">    <span class="comment">// any required modules inside node_modules are extracted to vendor</span></div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="built_in">module</span>.resource &amp;&amp;</div><div class="line">      /\.js$/.test(<span class="built_in">module</span>.resource) &amp;&amp;</div><div class="line">      <span class="built_in">module</span>.resource.indexOf(</div><div class="line">        path.join(__dirname, <span class="string">'../node_modules'</span>)</div><div class="line">      ) === <span class="number">0</span></div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;),</div><div class="line"><span class="comment">// extract webpack runtime and module manifest to its own file in order to</span></div><div class="line"><span class="comment">// prevent vendor hash from being updated whenever app bundle is updated</span></div><div class="line"><span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</div><div class="line">  name: <span class="string">'manifest'</span>,</div><div class="line">  chunks: [<span class="string">'vendor'</span>]</div><div class="line">&#125;)</div></pre></td></tr></table></figure><p></p><p>打包工具要解决的问题:</p><ul><li>文件依赖管理 梳理文件之间的依赖关系。</li><li>资源加载管理 处理文件的加载顺序（先后时机）和文件的加载数量（合并、嵌入、拆分）。</li><li>效率与优化管理 提高开发效率，完成页面优化。</li></ul><p>webpack是一个现代Javascript应用的打包工具。它采用tool+plugins的结构。tool提供基础能力，即文件依赖管理和资源加载管理；在此基础上通过一系列的plugins来丰富打包工具的功能。</p><p>在webpack里，所有的文件都是模块。但是webpack只认识js模块，所以要通过一些loader插件把css、图片等文件转化成webpack认识的模块。</p><p>在webpack打包的文件中，模块是以模块函数来表示的。通过把文件转化成模块函数就可以控制模块的运行时机。即加载完成后不会立即执行，等到调用模块函数的时候才会执行。</p><p>webpack的工作步骤如下：</p><ol><li>从入口文件开始递归地建立一个依赖关系图。</li><li>把所有文件都转化成模块函数。</li><li>根据依赖关系，按照配置文件把模块函数分组打包成若干个bundle。</li><li>通过script标签把打包的bundle注入到html中，通过manifest文件来管理bundle文件的运行和加载。</li></ol><p>打包的规则为：<br>一个入口文件对应一个bundle。该bundle包括入口文件模块和其依赖的模块。<br>按需加载的模块或需单独加载的模块则分开打包成其他的bundle。</p><p>除了这些bundle外，还有一个特别重要的bundle，就是manifest.bundle.js文件，即webpackBootstrap。这个manifest文件是最先加载的，负责解析webpack打包的其他bundle文件，使其按要求进行加载和执行。</p><h4 id="打包代码解析"><a href="#打包代码解析" class="headerlink" title="打包代码解析:"></a>打包代码解析:</h4><p>首先分析一下manifest文件:</p><p>(1) 三个主要变量，<code>modules</code>、<code>installedModules</code> 和 <code>installedChunks</code>。</p><p>modules对象保存的是所有的模块函数。模块函数是webpack处理的基本单位，对应打包前的一个文件，形式为<code>function(module, webpack_exports, webpack_require) {…}</code>。所有的模块函数的索引值是连续编码的，如果第一个bundle里的模块函数的索引是0-7，第二个bundle里的模块函数的索引就从8开始，从而保证索引和模块函数一一对应。</p><p>installedModules对象保存的是模块对象。模块对象是运行模块函数得到的对象，是标准的Commonjs对象，其属性主要有模块id和exports对象。webpack的运行就是指执行模块函数得到模块对象的过程。</p><p>installedChunks保存的是异步加载对象的promise信息，结构为[resolve, reject, promise]。主要是用来标记异步加载模块。用promise便于异步加载模块的全局管理，如果加载超时就可以抛出js异常。</p><p>(2) 三个主要函数<code>webpackJsonpCallback</code>，<code>webpack_require</code> 和 <code>webpack_require.e</code></p><p><code>webpackJsonpCallback(chunkIds, moreModules, executeModules){…}</code>是bundle文件的包裹函数。bundle文件被加载后就会运行这个函数。函数的三个参数分别对应三种模块。</p><ul><li>chunkIds指的是需要单独加载的模块的id，对应installedChunks；</li><li>moreModules包括该bundle打包的所有模块函数；</li><li>executeModules指的是需要立即执行的模块函数的id，对应modules，一般是入口文件对应的模块函数的id；<br>webpackJsonpCallback先把模块函数存到modules对象中；然后处理chunkIds，调用resolve来改变promise的状态；最后处理executeModules，把对应的模块函数转化成模块对象。</li></ul><p>webpack_require(moduleId)通过运行modules里的模块函数来得到模块对象，并保存到installedModules对象中。</p><p>webpack_require.e(chunkId)通过建立promise对象来跟踪按需加载模块的加载状态，并设置超时阙值，如果加载超时就抛出js异常。如果不需要处理加载超时异常的话，就不需要这个函数和installedChunks对象，可以把按需加载模块当作普通模块来处理。</p><p>manifest.js:<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/******/</span> (<span class="function"><span class="keyword">function</span>(<span class="params">modules</span>) </span>&#123; <span class="comment">// webpackBootstrap</span></div><div class="line">        <span class="comment">// modules存储的是模块函数</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// install a JSONP callback for chunk loading</span></div><div class="line"><span class="comment">/******/</span> 	<span class="keyword">var</span> parentJsonpFunction = <span class="built_in">window</span>[<span class="string">"webpackJsonp"</span>];</div><div class="line"><span class="comment">/******/</span> 	<span class="built_in">window</span>[<span class="string">"webpackJsonp"</span>] = <span class="function"><span class="keyword">function</span> <span class="title">webpackJsonpCallback</span>(<span class="params">chunkIds, moreModules, executeModules</span>) </span>&#123;</div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// add "moreModules" to the modules object,</span></div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// then flag all "chunkIds" as loaded and fire callback</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">var</span> moduleId, chunkId, i = <span class="number">0</span>, resolves = [], result;</div><div class="line">            <span class="comment">// 遍历chunkIds，如果对应的模块是按需加载的模块，就把其resolve函数存起来。</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">for</span>(;i &lt; chunkIds.length; i++) &#123;</div><div class="line"><span class="comment">/******/</span> 			chunkId = chunkIds[i];</div><div class="line"><span class="comment">/******/</span> 			<span class="keyword">if</span>(installedChunks[chunkId]) &#123;</div><div class="line">              <span class="comment">// 是按需加载的模块，取出其resolve函数</span></div><div class="line"><span class="comment">/******/</span> 				resolves.push(installedChunks[chunkId][<span class="number">0</span>]);</div><div class="line"><span class="comment">/******/</span> 			&#125;</div><div class="line">              <span class="comment">// 该chunk已经被处理了</span></div><div class="line"><span class="comment">/******/</span> 			installedChunks[chunkId] = <span class="number">0</span>;</div><div class="line"><span class="comment">/******/</span> 		&#125;</div><div class="line">            <span class="comment">// 遍历moreModules把模块函数存到modules中</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">for</span>(moduleId <span class="keyword">in</span> moreModules) &#123;</div><div class="line"><span class="comment">/******/</span> 			<span class="keyword">if</span>(<span class="built_in">Object</span>.prototype.hasOwnProperty.call(moreModules, moduleId)) &#123;</div><div class="line"><span class="comment">/******/</span> 				modules[moduleId] = moreModules[moduleId];</div><div class="line"><span class="comment">/******/</span> 			&#125;</div><div class="line"><span class="comment">/******/</span> 		&#125;</div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">if</span>(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules, executeModules);</div><div class="line">            <span class="comment">// 执行resolve函数，一般是__webpack_require__函数</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">while</span>(resolves.length) &#123;</div><div class="line"><span class="comment">/******/</span> 			resolves.shift()();</div><div class="line"><span class="comment">/******/</span> 		&#125;</div><div class="line">            <span class="comment">// 遍历moreModules把模块函数转化成模块对象</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">if</span>(executeModules) &#123;</div><div class="line"><span class="comment">/******/</span> 			<span class="keyword">for</span>(i=<span class="number">0</span>; i &lt; executeModules.length; i++) &#123;</div><div class="line"><span class="comment">/******/</span> 				result = __webpack_require__(__webpack_require__.s = executeModules[i]);</div><div class="line"><span class="comment">/******/</span> 			&#125;</div><div class="line"><span class="comment">/******/</span> 		&#125;</div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">return</span> result;</div><div class="line"><span class="comment">/******/</span> 	&#125;;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// The module cache</span></div><div class="line">          <span class="comment">// 存储的是模块对象</span></div><div class="line"><span class="comment">/******/</span> 	<span class="keyword">var</span> installedModules = &#123;&#125;;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// objects to store loaded and loading chunks</span></div><div class="line">          <span class="comment">// 按需加载的模块的promise</span></div><div class="line"><span class="comment">/******/</span> 	<span class="keyword">var</span> installedChunks = &#123;</div><div class="line"><span class="comment">/******/</span> 		<span class="number">2</span>: <span class="number">0</span></div><div class="line"><span class="comment">/******/</span> 	&#125;;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// The require function</span></div><div class="line">          <span class="comment">// require的功能是把modules对象里的模块函数转化成模块对象，</span></div><div class="line">          <span class="comment">// 即运行模块函数，模块函数会把模块的export赋值给模块对象，供其他模块调用。</span></div><div class="line"><span class="comment">/******/</span> 	<span class="function"><span class="keyword">function</span> <span class="title">__webpack_require__</span>(<span class="params">moduleId</span>) </span>&#123;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// Check if module is in cache</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">if</span>(installedModules[moduleId]) &#123;</div><div class="line"><span class="comment">/******/</span> 			<span class="keyword">return</span> installedModules[moduleId].exports;</div><div class="line"><span class="comment">/******/</span> 		&#125;</div><div class="line">            <span class="comment">// 下面开始把一个模块的代码转化成一个模块对象</span></div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// Create a new module (and put it into the cache)</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">var</span> <span class="built_in">module</span> = installedModules[moduleId] = &#123;</div><div class="line"><span class="comment">/******/</span> 			i: moduleId,</div><div class="line"><span class="comment">/******/</span> 			l: <span class="literal">false</span>, <span class="comment">// 是否已经加载完成</span></div><div class="line"><span class="comment">/******/</span> 			exports: &#123;&#125; <span class="comment">// 模块输出，几乎代表模块本身</span></div><div class="line"><span class="comment">/******/</span> 		&#125;;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// Execute the module function</span></div><div class="line">            <span class="comment">// 即运行模块函数，打包后的每个模块都是一个函数</span></div><div class="line"><span class="comment">/******/</span> 		modules[moduleId].call(<span class="built_in">module</span>.exports, <span class="built_in">module</span>, <span class="built_in">module</span>.exports, __webpack_require__);</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// Flag the module as loaded</span></div><div class="line"><span class="comment">/******/</span> 		<span class="built_in">module</span>.l = <span class="literal">true</span>;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// Return the exports of the module</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">return</span> <span class="built_in">module</span>.exports;</div><div class="line"><span class="comment">/******/</span> 	&#125;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// This file contains only the entry chunk.</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// The chunk loading function for additional chunks</span></div><div class="line"><span class="comment">/******/</span> 	__webpack_require__.e = <span class="function"><span class="keyword">function</span> <span class="title">requireEnsure</span>(<span class="params">chunkId</span>) </span>&#123;</div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">var</span> installedChunkData = installedChunks[chunkId];</div><div class="line">            <span class="comment">// 模块已经被处理过（加载了模块函数并转换成了模块对象），就返回promise，调用resolve</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">if</span>(installedChunkData === <span class="number">0</span>) &#123;</div><div class="line"><span class="comment">/******/</span> 			<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>) </span>&#123; resolve(); &#125;);</div><div class="line"><span class="comment">/******/</span> 		&#125;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// a Promise means "currently loading".</span></div><div class="line">            <span class="comment">// 模块正在被加载，返回原来的promise</span></div><div class="line">            <span class="comment">// 加载完后会运行模块函数，模块函数会调用resolve改变promise的状态</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">if</span>(installedChunkData) &#123;</div><div class="line"><span class="comment">/******/</span> 			<span class="keyword">return</span> installedChunkData[<span class="number">2</span>];</div><div class="line"><span class="comment">/******/</span> 		&#125;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// setup Promise in chunk cache</span></div><div class="line">            <span class="comment">// 新建promise，并把resolve，reject函数和promise都赋值给installedChunks[chunkId]，以便全局访问</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line"><span class="comment">/******/</span> 			installedChunkData = installedChunks[chunkId] = [resolve, reject];</div><div class="line"><span class="comment">/******/</span> 		&#125;);</div><div class="line"><span class="comment">/******/</span> 		installedChunkData[<span class="number">2</span>] = promise;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// start chunk loading</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">var</span> head = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>];</div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line"><span class="comment">/******/</span> 		script.type = <span class="string">'text/javascript'</span>;</div><div class="line"><span class="comment">/******/</span> 		script.charset = <span class="string">'utf-8'</span>;</div><div class="line"><span class="comment">/******/</span> 		script.async = <span class="literal">true</span>;</div><div class="line"><span class="comment">/******/</span> 		script.timeout = <span class="number">120000</span>;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">if</span> (__webpack_require__.nc) &#123;</div><div class="line"><span class="comment">/******/</span> 			script.setAttribute(<span class="string">"nonce"</span>, __webpack_require__.nc);</div><div class="line"><span class="comment">/******/</span> 		&#125;</div><div class="line"><span class="comment">/******/</span> 		script.src = __webpack_require__.p + <span class="string">"static/js/"</span> + chunkId + <span class="string">"."</span> + &#123;<span class="string">"0"</span>:<span class="string">"f88d1711e34db78d2921"</span>,<span class="string">"1"</span>:<span class="string">"4fd48cb8f466e537b9fe"</span>&#125;[chunkId] + <span class="string">".js"</span>;</div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">var</span> timeout = setTimeout(onScriptComplete, <span class="number">120000</span>);</div><div class="line"><span class="comment">/******/</span> 		script.onerror = script.onload = onScriptComplete;</div><div class="line"><span class="comment">/******/</span> 		<span class="function"><span class="keyword">function</span> <span class="title">onScriptComplete</span>(<span class="params"></span>) </span>&#123;</div><div class="line"><span class="comment">/******/</span> 			<span class="comment">// avoid mem leaks in IE.</span></div><div class="line"><span class="comment">/******/</span> 			script.onerror = script.onload = <span class="literal">null</span>;</div><div class="line"><span class="comment">/******/</span> 			clearTimeout(timeout);</div><div class="line"><span class="comment">/******/</span> 			<span class="keyword">var</span> chunk = installedChunks[chunkId];</div><div class="line"><span class="comment">/******/</span> 			<span class="keyword">if</span>(chunk !== <span class="number">0</span>) &#123; <span class="comment">// 没有被处理</span></div><div class="line"><span class="comment">/******/</span> 				<span class="keyword">if</span>(chunk) &#123; <span class="comment">// 是按需加载模块，即请求超时了</span></div><div class="line"><span class="comment">/******/</span> 					chunk[<span class="number">1</span>](<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Loading chunk '</span> + chunkId + <span class="string">' failed.'</span>));</div><div class="line"><span class="comment">/******/</span> 				&#125;</div><div class="line"><span class="comment">/******/</span> 				installedChunks[chunkId] = <span class="literal">undefined</span>;</div><div class="line"><span class="comment">/******/</span> 			&#125;</div><div class="line"><span class="comment">/******/</span> 		&#125;;</div><div class="line"><span class="comment">/******/</span> 		head.appendChild(script);</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">return</span> promise;</div><div class="line"><span class="comment">/******/</span> 	&#125;;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// expose the modules object (__webpack_modules__)</span></div><div class="line"><span class="comment">/******/</span> 	__webpack_require__.m = modules;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// expose the module cache</span></div><div class="line"><span class="comment">/******/</span> 	__webpack_require__.c = installedModules;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// define getter function for harmony exports</span></div><div class="line"><span class="comment">/******/</span> 	__webpack_require__.d = <span class="function"><span class="keyword">function</span>(<span class="params">exports, name, getter</span>) </span>&#123;</div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">if</span>(!__webpack_require__.o(exports, name)) &#123;</div><div class="line"><span class="comment">/******/</span> 			<span class="built_in">Object</span>.defineProperty(exports, name, &#123;</div><div class="line"><span class="comment">/******/</span> 				configurable: <span class="literal">false</span>,</div><div class="line"><span class="comment">/******/</span> 				enumerable: <span class="literal">true</span>,</div><div class="line"><span class="comment">/******/</span> 				get: getter</div><div class="line"><span class="comment">/******/</span> 			&#125;);</div><div class="line"><span class="comment">/******/</span> 		&#125;</div><div class="line"><span class="comment">/******/</span> 	&#125;;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// getDefaultExport function for compatibility with non-harmony modules</span></div><div class="line"><span class="comment">/******/</span> 	__webpack_require__.n = <span class="function"><span class="keyword">function</span>(<span class="params">module</span>) </span>&#123;</div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">var</span> getter = <span class="built_in">module</span> &amp;&amp; <span class="built_in">module</span>.__esModule ?</div><div class="line"><span class="comment">/******/</span> 			<span class="function"><span class="keyword">function</span> <span class="title">getDefault</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="built_in">module</span>[<span class="string">'default'</span>]; &#125; :</div><div class="line"><span class="comment">/******/</span> 			<span class="function"><span class="keyword">function</span> <span class="title">getModuleExports</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="built_in">module</span>; &#125;;</div><div class="line"><span class="comment">/******/</span> 		__webpack_require__.d(getter, <span class="string">'a'</span>, getter);</div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">return</span> getter;</div><div class="line"><span class="comment">/******/</span> 	&#125;;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// Object.prototype.hasOwnProperty.call</span></div><div class="line"><span class="comment">/******/</span> 	__webpack_require__.o = <span class="function"><span class="keyword">function</span>(<span class="params">object, property</span>) </span>&#123; <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.hasOwnProperty.call(object, property); &#125;;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// __webpack_public_path__</span></div><div class="line"><span class="comment">/******/</span> 	__webpack_require__.p = <span class="string">"/"</span>;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// on error function for async loading</span></div><div class="line"><span class="comment">/******/</span> 	__webpack_require__.oe = <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123; <span class="built_in">console</span>.error(err); <span class="keyword">throw</span> err; &#125;;</div><div class="line"><span class="comment">/******/</span> &#125;)</div><div class="line"><span class="comment">/************************************************************************/</span></div><div class="line"><span class="comment">/******/</span> ([]);</div><div class="line"><span class="comment">//# sourceMappingURL=manifest.439b74d2200fbac023c2.js.map</span></div></pre></td></tr></table></figure><p></p><p>然后分析普通的bundle文件:</p><p>所有的代码都包裹在webpackJsonp函数中。</p><p>函数的第二个参数是一个数组，包含了打包的所有文件对应的模块函数。<br>模块函数的标准形式为<code>function(module, webpack_exports, webpack_require) {…}</code>。<br>模块函数里的代码是打包前的文件的代码做了相应的替换得到的。<br>比如:替换<code>require</code>为<code>webpack_require</code>，替换以前的路径为新的路径，替换<code>import</code>为<code>webpack_require.e().then()</code>等。模块函数通过<code>webpack_exports[&#39;a&#39;] = printMe</code>之类的语句输出模块的<code>exports</code>。通过模块函数，把<code>amd</code>、<code>cmd</code>、<code>commjs</code>模块都统一为<code>webpack</code>的模块。<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">webpackJsonp([<span class="number">0</span>],[</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">module, __webpack_exports__, __webpack_require__</span>) </span>&#123;</div><div class="line"><span class="meta">    "use strict"</span>;</div><div class="line">    <span class="built_in">Object</span>.defineProperty(__webpack_exports__, <span class="string">"__esModule"</span>, &#123; <span class="attr">value</span>: <span class="literal">true</span> &#125;);</div><div class="line">    <span class="comment">// 加载依赖模块</span></div><div class="line">    <span class="keyword">var</span> __WEBPACK_IMPORTED_MODULE_0__style_css__ = __webpack_require__(<span class="number">2</span>);</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    <span class="keyword">var</span> __WEBPACK_IMPORTED_MODULE_1__katong_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__katong_jpg__);</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    <span class="keyword">var</span> __WEBPACK_IMPORTED_MODULE_2__say_js__ = __webpack_require__(<span class="number">7</span>);</div><div class="line">    <span class="comment">// welcome.js文件里的代码</span></div><div class="line">    <span class="keyword">var</span> elDiv1 = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    <span class="comment">// 把原来的url替换成了上面加载的图片</span></div><div class="line">    elImg.src = __WEBPACK_IMPORTED_MODULE_1__katong_jpg___default.a;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    <span class="comment">// 把import替换成用promise实现的__webpack_require__.e()来完成异步按需加载</span></div><div class="line">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        __webpack_require__.e(<span class="number">0</span>).then(__webpack_require__.bind(<span class="literal">null</span>, <span class="number">8</span>)).then(<span class="function"><span class="params">m</span> =&gt;</span> &#123;</div><div class="line">          m.default();</div><div class="line">        &#125;);</div><div class="line">    &#125;;</div><div class="line">    <span class="comment">// 把原来的say()函数替换成上面加载的函数</span></div><div class="line">    <span class="built_in">Object</span>(__WEBPACK_IMPORTED_MODULE_2__say_js__[<span class="string">"a"</span>])();</div><div class="line">  &#125;),</div><div class="line">],[<span class="number">1</span>]);</div></pre></td></tr></table></figure><p></p></div><div></div><div></div><footer class="post-footer"><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/2017/10/12/TypeScript入门/" rel="next" title="TypeScript入门"><i class="fa fa-chevron-left"></i> TypeScript入门</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"> <a href="/2017/10/14/TCP&UDP/" rel="prev" title="TCP & UDP">TCP & UDP<i class="fa fa-chevron-right"></i></a></div></div></footer></article><div class="post-spread"></div></div></div><div class="comments" id="comments"></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap"> 文章目录</li><li class="sidebar-nav-overview" data-target="site-overview"> 站点概览</li></ul><section class="site-overview sidebar-panel"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"> <img class="site-author-image" itemprop="image" src="/images/tx.png" alt="weitongtong"><p class="site-author-name" itemprop="name">weitongtong</p><p class="site-description motion-element" itemprop="description">长亭外，古道边，芳草碧连天</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"> <a href="/archives"><span class="site-state-item-count">34</span> <span class="site-state-item-name">日志</span></a></div></nav><div class="links-of-author motion-element"></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#打包代码解析"><span class="nav-number">1.</span> <span class="nav-text">打包代码解析:</span></a></li></ol></div></div></section></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright"> &copy; <span itemprop="copyrightYear">2017</span><span class="with-love"><i class="fa fa-heart"></i></span> <span class="author" itemprop="copyrightHolder">weitongtong</span></div> <span id="busuanzi_container_site_pv" class="powered-by">pv:<span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv">uv:<span id="busuanzi_value_site_uv"></span></span><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i></div></div><script type="text/javascript">
+  </style>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div id="particles-js"></div>
+    <div class="headband"></div>
+    <a href="https://github.com/weitongtong"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Output</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">output</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/custom" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/custom" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-gitbook">
+          <a href="/gitbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            gitbook
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">
+  <i class="fa fa-times" style="font-size: 18px; margin-top: 10px;" aria-hidden="true"></i>
+</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/13/vue-cli相关/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="weitongtong">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/tx.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Output">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Output" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                vue-cli相关
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-13T16:49:29+08:00">
+                2017-10-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>wepack build之后会产生3个js文件：</p>
+<ul>
+<li>app.js 是入口js,具体业务代码（我们的src下的）</li>
+<li>vendor.js 通过提取公共模块插件来提取的代码块（node_modules）</li>
+<li>manifest.js 在vendor的基础上，再抽取出要经常变动的部分。</li>
+</ul>
+<blockquote>
+<p>至于manifest的话，主要是一些异步加载的实现方法（通过建立script方式动态引入js），内容上包含异步js的文件名和路径。<br>主要是js的改动会改变异步加载里面的js文件名，频繁的变动，而相对来说vue库之类的代码，实际上只要编译打包一次就够了，如果只是打包成一个vendor的话，经常变动js会导致vendor重复编译，有点浪费，所以把会重复跟随变动的部分抽离出来作为manifest文件。</p>
+</blockquote>
+<p>以下是webpack.prod.js的配置：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</div><div class="line">  name: <span class="string">'vendor'</span>,</div><div class="line">  minChunks: <span class="function"><span class="keyword">function</span> (<span class="params">module, count</span>) </span>&#123;</div><div class="line">    <span class="comment">// any required modules inside node_modules are extracted to vendor</span></div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="built_in">module</span>.resource &amp;&amp;</div><div class="line">      /\.js$/.test(<span class="built_in">module</span>.resource) &amp;&amp;</div><div class="line">      <span class="built_in">module</span>.resource.indexOf(</div><div class="line">        path.join(__dirname, <span class="string">'../node_modules'</span>)</div><div class="line">      ) === <span class="number">0</span></div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;),</div><div class="line"><span class="comment">// extract webpack runtime and module manifest to its own file in order to</span></div><div class="line"><span class="comment">// prevent vendor hash from being updated whenever app bundle is updated</span></div><div class="line"><span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</div><div class="line">  name: <span class="string">'manifest'</span>,</div><div class="line">  chunks: [<span class="string">'vendor'</span>]</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>打包工具要解决的问题:</p>
+<ul>
+<li>文件依赖管理 梳理文件之间的依赖关系。</li>
+<li>资源加载管理 处理文件的加载顺序（先后时机）和文件的加载数量（合并、嵌入、拆分）。</li>
+<li>效率与优化管理 提高开发效率，完成页面优化。</li>
+</ul>
+<p>webpack是一个现代Javascript应用的打包工具。它采用tool+plugins的结构。tool提供基础能力，即文件依赖管理和资源加载管理；在此基础上通过一系列的plugins来丰富打包工具的功能。</p>
+<p>在webpack里，所有的文件都是模块。但是webpack只认识js模块，所以要通过一些loader插件把css、图片等文件转化成webpack认识的模块。</p>
+<p>在webpack打包的文件中，模块是以模块函数来表示的。通过把文件转化成模块函数就可以控制模块的运行时机。即加载完成后不会立即执行，等到调用模块函数的时候才会执行。</p>
+<p>webpack的工作步骤如下：</p>
+<ol>
+<li>从入口文件开始递归地建立一个依赖关系图。</li>
+<li>把所有文件都转化成模块函数。</li>
+<li>根据依赖关系，按照配置文件把模块函数分组打包成若干个bundle。</li>
+<li>通过script标签把打包的bundle注入到html中，通过manifest文件来管理bundle文件的运行和加载。</li>
+</ol>
+<p>打包的规则为：<br>一个入口文件对应一个bundle。该bundle包括入口文件模块和其依赖的模块。<br>按需加载的模块或需单独加载的模块则分开打包成其他的bundle。</p>
+<p>除了这些bundle外，还有一个特别重要的bundle，就是manifest.bundle.js文件，即webpackBootstrap。这个manifest文件是最先加载的，负责解析webpack打包的其他bundle文件，使其按要求进行加载和执行。</p>
+<h4 id="打包代码解析"><a href="#打包代码解析" class="headerlink" title="打包代码解析:"></a>打包代码解析:</h4><p>首先分析一下manifest文件:</p>
+<p>(1) 三个主要变量，<code>modules</code>、<code>installedModules</code> 和 <code>installedChunks</code>。</p>
+<p>modules对象保存的是所有的模块函数。模块函数是webpack处理的基本单位，对应打包前的一个文件，形式为<code>function(module, webpack_exports, webpack_require) {…}</code>。所有的模块函数的索引值是连续编码的，如果第一个bundle里的模块函数的索引是0-7，第二个bundle里的模块函数的索引就从8开始，从而保证索引和模块函数一一对应。</p>
+<p>installedModules对象保存的是模块对象。模块对象是运行模块函数得到的对象，是标准的Commonjs对象，其属性主要有模块id和exports对象。webpack的运行就是指执行模块函数得到模块对象的过程。</p>
+<p>installedChunks保存的是异步加载对象的promise信息，结构为[resolve, reject, promise]。主要是用来标记异步加载模块。用promise便于异步加载模块的全局管理，如果加载超时就可以抛出js异常。</p>
+<p>(2) 三个主要函数<code>webpackJsonpCallback</code>，<code>webpack_require</code> 和 <code>webpack_require.e</code></p>
+<p><code>webpackJsonpCallback(chunkIds, moreModules, executeModules){…}</code>是bundle文件的包裹函数。bundle文件被加载后就会运行这个函数。函数的三个参数分别对应三种模块。</p>
+<ul>
+<li>chunkIds指的是需要单独加载的模块的id，对应installedChunks；</li>
+<li>moreModules包括该bundle打包的所有模块函数；</li>
+<li>executeModules指的是需要立即执行的模块函数的id，对应modules，一般是入口文件对应的模块函数的id；<br>webpackJsonpCallback先把模块函数存到modules对象中；然后处理chunkIds，调用resolve来改变promise的状态；最后处理executeModules，把对应的模块函数转化成模块对象。</li>
+</ul>
+<p>webpack_require(moduleId)通过运行modules里的模块函数来得到模块对象，并保存到installedModules对象中。</p>
+<p>webpack_require.e(chunkId)通过建立promise对象来跟踪按需加载模块的加载状态，并设置超时阙值，如果加载超时就抛出js异常。如果不需要处理加载超时异常的话，就不需要这个函数和installedChunks对象，可以把按需加载模块当作普通模块来处理。</p>
+<p>manifest.js:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/******/</span> (<span class="function"><span class="keyword">function</span>(<span class="params">modules</span>) </span>&#123; <span class="comment">// webpackBootstrap</span></div><div class="line">        <span class="comment">// modules存储的是模块函数</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// install a JSONP callback for chunk loading</span></div><div class="line"><span class="comment">/******/</span> 	<span class="keyword">var</span> parentJsonpFunction = <span class="built_in">window</span>[<span class="string">"webpackJsonp"</span>];</div><div class="line"><span class="comment">/******/</span> 	<span class="built_in">window</span>[<span class="string">"webpackJsonp"</span>] = <span class="function"><span class="keyword">function</span> <span class="title">webpackJsonpCallback</span>(<span class="params">chunkIds, moreModules, executeModules</span>) </span>&#123;</div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// add "moreModules" to the modules object,</span></div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// then flag all "chunkIds" as loaded and fire callback</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">var</span> moduleId, chunkId, i = <span class="number">0</span>, resolves = [], result;</div><div class="line">            <span class="comment">// 遍历chunkIds，如果对应的模块是按需加载的模块，就把其resolve函数存起来。</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">for</span>(;i &lt; chunkIds.length; i++) &#123;</div><div class="line"><span class="comment">/******/</span> 			chunkId = chunkIds[i];</div><div class="line"><span class="comment">/******/</span> 			<span class="keyword">if</span>(installedChunks[chunkId]) &#123;</div><div class="line">              <span class="comment">// 是按需加载的模块，取出其resolve函数</span></div><div class="line"><span class="comment">/******/</span> 				resolves.push(installedChunks[chunkId][<span class="number">0</span>]);</div><div class="line"><span class="comment">/******/</span> 			&#125;</div><div class="line">              <span class="comment">// 该chunk已经被处理了</span></div><div class="line"><span class="comment">/******/</span> 			installedChunks[chunkId] = <span class="number">0</span>;</div><div class="line"><span class="comment">/******/</span> 		&#125;</div><div class="line">            <span class="comment">// 遍历moreModules把模块函数存到modules中</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">for</span>(moduleId <span class="keyword">in</span> moreModules) &#123;</div><div class="line"><span class="comment">/******/</span> 			<span class="keyword">if</span>(<span class="built_in">Object</span>.prototype.hasOwnProperty.call(moreModules, moduleId)) &#123;</div><div class="line"><span class="comment">/******/</span> 				modules[moduleId] = moreModules[moduleId];</div><div class="line"><span class="comment">/******/</span> 			&#125;</div><div class="line"><span class="comment">/******/</span> 		&#125;</div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">if</span>(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules, executeModules);</div><div class="line">            <span class="comment">// 执行resolve函数，一般是__webpack_require__函数</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">while</span>(resolves.length) &#123;</div><div class="line"><span class="comment">/******/</span> 			resolves.shift()();</div><div class="line"><span class="comment">/******/</span> 		&#125;</div><div class="line">            <span class="comment">// 遍历moreModules把模块函数转化成模块对象</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">if</span>(executeModules) &#123;</div><div class="line"><span class="comment">/******/</span> 			<span class="keyword">for</span>(i=<span class="number">0</span>; i &lt; executeModules.length; i++) &#123;</div><div class="line"><span class="comment">/******/</span> 				result = __webpack_require__(__webpack_require__.s = executeModules[i]);</div><div class="line"><span class="comment">/******/</span> 			&#125;</div><div class="line"><span class="comment">/******/</span> 		&#125;</div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">return</span> result;</div><div class="line"><span class="comment">/******/</span> 	&#125;;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// The module cache</span></div><div class="line">          <span class="comment">// 存储的是模块对象</span></div><div class="line"><span class="comment">/******/</span> 	<span class="keyword">var</span> installedModules = &#123;&#125;;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// objects to store loaded and loading chunks</span></div><div class="line">          <span class="comment">// 按需加载的模块的promise</span></div><div class="line"><span class="comment">/******/</span> 	<span class="keyword">var</span> installedChunks = &#123;</div><div class="line"><span class="comment">/******/</span> 		<span class="number">2</span>: <span class="number">0</span></div><div class="line"><span class="comment">/******/</span> 	&#125;;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// The require function</span></div><div class="line">          <span class="comment">// require的功能是把modules对象里的模块函数转化成模块对象，</span></div><div class="line">          <span class="comment">// 即运行模块函数，模块函数会把模块的export赋值给模块对象，供其他模块调用。</span></div><div class="line"><span class="comment">/******/</span> 	<span class="function"><span class="keyword">function</span> <span class="title">__webpack_require__</span>(<span class="params">moduleId</span>) </span>&#123;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// Check if module is in cache</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">if</span>(installedModules[moduleId]) &#123;</div><div class="line"><span class="comment">/******/</span> 			<span class="keyword">return</span> installedModules[moduleId].exports;</div><div class="line"><span class="comment">/******/</span> 		&#125;</div><div class="line">            <span class="comment">// 下面开始把一个模块的代码转化成一个模块对象</span></div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// Create a new module (and put it into the cache)</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">var</span> <span class="built_in">module</span> = installedModules[moduleId] = &#123;</div><div class="line"><span class="comment">/******/</span> 			i: moduleId,</div><div class="line"><span class="comment">/******/</span> 			l: <span class="literal">false</span>, <span class="comment">// 是否已经加载完成</span></div><div class="line"><span class="comment">/******/</span> 			exports: &#123;&#125; <span class="comment">// 模块输出，几乎代表模块本身</span></div><div class="line"><span class="comment">/******/</span> 		&#125;;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// Execute the module function</span></div><div class="line">            <span class="comment">// 即运行模块函数，打包后的每个模块都是一个函数</span></div><div class="line"><span class="comment">/******/</span> 		modules[moduleId].call(<span class="built_in">module</span>.exports, <span class="built_in">module</span>, <span class="built_in">module</span>.exports, __webpack_require__);</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// Flag the module as loaded</span></div><div class="line"><span class="comment">/******/</span> 		<span class="built_in">module</span>.l = <span class="literal">true</span>;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// Return the exports of the module</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">return</span> <span class="built_in">module</span>.exports;</div><div class="line"><span class="comment">/******/</span> 	&#125;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// This file contains only the entry chunk.</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// The chunk loading function for additional chunks</span></div><div class="line"><span class="comment">/******/</span> 	__webpack_require__.e = <span class="function"><span class="keyword">function</span> <span class="title">requireEnsure</span>(<span class="params">chunkId</span>) </span>&#123;</div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">var</span> installedChunkData = installedChunks[chunkId];</div><div class="line">            <span class="comment">// 模块已经被处理过（加载了模块函数并转换成了模块对象），就返回promise，调用resolve</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">if</span>(installedChunkData === <span class="number">0</span>) &#123;</div><div class="line"><span class="comment">/******/</span> 			<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>) </span>&#123; resolve(); &#125;);</div><div class="line"><span class="comment">/******/</span> 		&#125;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// a Promise means "currently loading".</span></div><div class="line">            <span class="comment">// 模块正在被加载，返回原来的promise</span></div><div class="line">            <span class="comment">// 加载完后会运行模块函数，模块函数会调用resolve改变promise的状态</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">if</span>(installedChunkData) &#123;</div><div class="line"><span class="comment">/******/</span> 			<span class="keyword">return</span> installedChunkData[<span class="number">2</span>];</div><div class="line"><span class="comment">/******/</span> 		&#125;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// setup Promise in chunk cache</span></div><div class="line">            <span class="comment">// 新建promise，并把resolve，reject函数和promise都赋值给installedChunks[chunkId]，以便全局访问</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line"><span class="comment">/******/</span> 			installedChunkData = installedChunks[chunkId] = [resolve, reject];</div><div class="line"><span class="comment">/******/</span> 		&#125;);</div><div class="line"><span class="comment">/******/</span> 		installedChunkData[<span class="number">2</span>] = promise;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 		<span class="comment">// start chunk loading</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">var</span> head = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>];</div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line"><span class="comment">/******/</span> 		script.type = <span class="string">'text/javascript'</span>;</div><div class="line"><span class="comment">/******/</span> 		script.charset = <span class="string">'utf-8'</span>;</div><div class="line"><span class="comment">/******/</span> 		script.async = <span class="literal">true</span>;</div><div class="line"><span class="comment">/******/</span> 		script.timeout = <span class="number">120000</span>;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">if</span> (__webpack_require__.nc) &#123;</div><div class="line"><span class="comment">/******/</span> 			script.setAttribute(<span class="string">"nonce"</span>, __webpack_require__.nc);</div><div class="line"><span class="comment">/******/</span> 		&#125;</div><div class="line"><span class="comment">/******/</span> 		script.src = __webpack_require__.p + <span class="string">"static/js/"</span> + chunkId + <span class="string">"."</span> + &#123;<span class="string">"0"</span>:<span class="string">"f88d1711e34db78d2921"</span>,<span class="string">"1"</span>:<span class="string">"4fd48cb8f466e537b9fe"</span>&#125;[chunkId] + <span class="string">".js"</span>;</div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">var</span> timeout = setTimeout(onScriptComplete, <span class="number">120000</span>);</div><div class="line"><span class="comment">/******/</span> 		script.onerror = script.onload = onScriptComplete;</div><div class="line"><span class="comment">/******/</span> 		<span class="function"><span class="keyword">function</span> <span class="title">onScriptComplete</span>(<span class="params"></span>) </span>&#123;</div><div class="line"><span class="comment">/******/</span> 			<span class="comment">// avoid mem leaks in IE.</span></div><div class="line"><span class="comment">/******/</span> 			script.onerror = script.onload = <span class="literal">null</span>;</div><div class="line"><span class="comment">/******/</span> 			clearTimeout(timeout);</div><div class="line"><span class="comment">/******/</span> 			<span class="keyword">var</span> chunk = installedChunks[chunkId];</div><div class="line"><span class="comment">/******/</span> 			<span class="keyword">if</span>(chunk !== <span class="number">0</span>) &#123; <span class="comment">// 没有被处理</span></div><div class="line"><span class="comment">/******/</span> 				<span class="keyword">if</span>(chunk) &#123; <span class="comment">// 是按需加载模块，即请求超时了</span></div><div class="line"><span class="comment">/******/</span> 					chunk[<span class="number">1</span>](<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Loading chunk '</span> + chunkId + <span class="string">' failed.'</span>));</div><div class="line"><span class="comment">/******/</span> 				&#125;</div><div class="line"><span class="comment">/******/</span> 				installedChunks[chunkId] = <span class="literal">undefined</span>;</div><div class="line"><span class="comment">/******/</span> 			&#125;</div><div class="line"><span class="comment">/******/</span> 		&#125;;</div><div class="line"><span class="comment">/******/</span> 		head.appendChild(script);</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">return</span> promise;</div><div class="line"><span class="comment">/******/</span> 	&#125;;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// expose the modules object (__webpack_modules__)</span></div><div class="line"><span class="comment">/******/</span> 	__webpack_require__.m = modules;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// expose the module cache</span></div><div class="line"><span class="comment">/******/</span> 	__webpack_require__.c = installedModules;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// define getter function for harmony exports</span></div><div class="line"><span class="comment">/******/</span> 	__webpack_require__.d = <span class="function"><span class="keyword">function</span>(<span class="params">exports, name, getter</span>) </span>&#123;</div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">if</span>(!__webpack_require__.o(exports, name)) &#123;</div><div class="line"><span class="comment">/******/</span> 			<span class="built_in">Object</span>.defineProperty(exports, name, &#123;</div><div class="line"><span class="comment">/******/</span> 				configurable: <span class="literal">false</span>,</div><div class="line"><span class="comment">/******/</span> 				enumerable: <span class="literal">true</span>,</div><div class="line"><span class="comment">/******/</span> 				get: getter</div><div class="line"><span class="comment">/******/</span> 			&#125;);</div><div class="line"><span class="comment">/******/</span> 		&#125;</div><div class="line"><span class="comment">/******/</span> 	&#125;;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// getDefaultExport function for compatibility with non-harmony modules</span></div><div class="line"><span class="comment">/******/</span> 	__webpack_require__.n = <span class="function"><span class="keyword">function</span>(<span class="params">module</span>) </span>&#123;</div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">var</span> getter = <span class="built_in">module</span> &amp;&amp; <span class="built_in">module</span>.__esModule ?</div><div class="line"><span class="comment">/******/</span> 			<span class="function"><span class="keyword">function</span> <span class="title">getDefault</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="built_in">module</span>[<span class="string">'default'</span>]; &#125; :</div><div class="line"><span class="comment">/******/</span> 			<span class="function"><span class="keyword">function</span> <span class="title">getModuleExports</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="built_in">module</span>; &#125;;</div><div class="line"><span class="comment">/******/</span> 		__webpack_require__.d(getter, <span class="string">'a'</span>, getter);</div><div class="line"><span class="comment">/******/</span> 		<span class="keyword">return</span> getter;</div><div class="line"><span class="comment">/******/</span> 	&#125;;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// Object.prototype.hasOwnProperty.call</span></div><div class="line"><span class="comment">/******/</span> 	__webpack_require__.o = <span class="function"><span class="keyword">function</span>(<span class="params">object, property</span>) </span>&#123; <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.hasOwnProperty.call(object, property); &#125;;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// __webpack_public_path__</span></div><div class="line"><span class="comment">/******/</span> 	__webpack_require__.p = <span class="string">"/"</span>;</div><div class="line"><span class="comment">/******/</span></div><div class="line"><span class="comment">/******/</span> 	<span class="comment">// on error function for async loading</span></div><div class="line"><span class="comment">/******/</span> 	__webpack_require__.oe = <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123; <span class="built_in">console</span>.error(err); <span class="keyword">throw</span> err; &#125;;</div><div class="line"><span class="comment">/******/</span> &#125;)</div><div class="line"><span class="comment">/************************************************************************/</span></div><div class="line"><span class="comment">/******/</span> ([]);</div><div class="line"><span class="comment">//# sourceMappingURL=manifest.439b74d2200fbac023c2.js.map</span></div></pre></td></tr></table></figure></p>
+<p>然后分析普通的bundle文件:</p>
+<p>所有的代码都包裹在webpackJsonp函数中。</p>
+<p>函数的第二个参数是一个数组，包含了打包的所有文件对应的模块函数。<br>模块函数的标准形式为<code>function(module, webpack_exports, webpack_require) {…}</code>。<br>模块函数里的代码是打包前的文件的代码做了相应的替换得到的。<br>比如:替换<code>require</code>为<code>webpack_require</code>，替换以前的路径为新的路径，替换<code>import</code>为<code>webpack_require.e().then()</code>等。模块函数通过<code>webpack_exports[&#39;a&#39;] = printMe</code>之类的语句输出模块的<code>exports</code>。通过模块函数，把<code>amd</code>、<code>cmd</code>、<code>commjs</code>模块都统一为<code>webpack</code>的模块。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">webpackJsonp([<span class="number">0</span>],[</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">module, __webpack_exports__, __webpack_require__</span>) </span>&#123;</div><div class="line"><span class="meta">    "use strict"</span>;</div><div class="line">    <span class="built_in">Object</span>.defineProperty(__webpack_exports__, <span class="string">"__esModule"</span>, &#123; <span class="attr">value</span>: <span class="literal">true</span> &#125;);</div><div class="line">    <span class="comment">// 加载依赖模块</span></div><div class="line">    <span class="keyword">var</span> __WEBPACK_IMPORTED_MODULE_0__style_css__ = __webpack_require__(<span class="number">2</span>);</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    <span class="keyword">var</span> __WEBPACK_IMPORTED_MODULE_1__katong_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__katong_jpg__);</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    <span class="keyword">var</span> __WEBPACK_IMPORTED_MODULE_2__say_js__ = __webpack_require__(<span class="number">7</span>);</div><div class="line">    <span class="comment">// welcome.js文件里的代码</span></div><div class="line">    <span class="keyword">var</span> elDiv1 = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    <span class="comment">// 把原来的url替换成了上面加载的图片</span></div><div class="line">    elImg.src = __WEBPACK_IMPORTED_MODULE_1__katong_jpg___default.a;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    <span class="comment">// 把import替换成用promise实现的__webpack_require__.e()来完成异步按需加载</span></div><div class="line">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        __webpack_require__.e(<span class="number">0</span>).then(__webpack_require__.bind(<span class="literal">null</span>, <span class="number">8</span>)).then(<span class="function"><span class="params">m</span> =&gt;</span> &#123;</div><div class="line">          m.default();</div><div class="line">        &#125;);</div><div class="line">    &#125;;</div><div class="line">    <span class="comment">// 把原来的say()函数替换成上面加载的函数</span></div><div class="line">    <span class="built_in">Object</span>(__WEBPACK_IMPORTED_MODULE_2__say_js__[<span class="string">"a"</span>])();</div><div class="line">  &#125;),</div><div class="line">],[<span class="number">1</span>]);</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/12/TypeScript入门/" rel="next" title="TypeScript入门">
+                <i class="fa fa-chevron-left"></i> TypeScript入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/14/TCP&UDP/" rel="prev" title="TCP & UDP">
+                TCP & UDP <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/tx.png"
+               alt="weitongtong" />
+          <p class="site-author-name" itemprop="name">weitongtong</p>
+          <p class="site-description motion-element" itemprop="description">长亭外，古道边，芳草碧连天</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">35</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#打包代码解析"><span class="nav-number">1.</span> <span class="nav-text">打包代码解析:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">weitongtong</span>
+</div>
+
+<span id="busuanzi_container_site_pv" class="powered-by">
+  pv: <span id="busuanzi_value_site_pv"></span>
+</span>
+<span id="busuanzi_container_site_uv">
+  uv: <span id="busuanzi_value_site_uv"></span>
+</span>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
-</script><script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script><script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script><script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script><script type="text/javascript">
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+  
+  
+  <script type="text/javascript">
     // Popup Window;
     var isfetched = false;
     // Search DB path;
@@ -163,4 +808,20 @@
     $('.popup').click(function(e){
       e.stopPropagation();
     });
-  </script><script type="text/javascript" src="/js/src/particle.min.js"></script><script type="text/javascript" src="/js/src/main.js"></script></body></html>
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/particle.min.js"></script>
+  <script type="text/javascript" src="/js/src/main.js"></script>
+
+</body>
+</html>

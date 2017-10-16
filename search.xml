@@ -3,6 +3,18 @@
   
     
     <entry>
+      <title><![CDATA[http]]></title>
+      <url>/2017/10/15/http/</url>
+      <content type="html"><![CDATA[<h4 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h4><p>HTTP超文本传输协议，构建在TCP之上，属于应用层协议。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl -v http://127.0.0.1:4001</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>http模块:<br>Node 的 http 模块包含对 HTTP 处理的封装。在 Node 中， HTTP 服务继承自 TCP 服务器（net 模块），它能够与多个客户端保持连接，由于其采用事件驱动的形式，并不为每一个连接创建额外的线程或进程，保持很低的内存占用，所以能实现高并发。HTTP 服务与 TCP 服务模型有区别的地方在于，在开启 keepalive 后，一个 TCP 会话可以用于多次请求和响应。TCP 服务以 connection 为单位进行服务，HTTP 服务以 request 为单位进行服务。http 模块即是将 connection 到 request 的过程进行了封装，如下：</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[TCP & UDP]]></title>
       <url>/2017/10/14/TCP&amp;UDP/</url>
       <content type="html"><![CDATA[<p>Node 事件驱动、无阻塞、单线程<br>利用Node搭建网络服务器，不需要额外的容器（Apache,tomcat等）<br>Node 提供了 net、dgram、http、https 4个模块，分别用于处理 TCP、UDP、HTTP、HTTPS ，适用于服务端和客户端。</p>
