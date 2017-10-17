@@ -3,6 +3,40 @@
   
     
     <entry>
+      <title><![CDATA[浅析PAC]]></title>
+      <url>/2017/10/17/%E6%B5%85%E6%9E%90PAC/</url>
+      <content type="html"><![CDATA[<p>Shadowsocks是目前很流行的翻墙工具，轻量等。<br>它提供两种模式：</p>
+<ul>
+<li>全局模式（不解释，你懂的）</li>
+<li>PAC代理模式</li>
+</ul>
+<a id="more"></a>
+<h4 id="什么是PAC"><a href="#什么是PAC" class="headerlink" title="什么是PAC"></a>什么是PAC</h4><p>自动代理配置(Proxy auto-config) 是一种网页浏览器技术，用于定义浏览器该如何自动选择适当的代理服务器来访问一个网址。<br>一个<code>PAC</code>文件包含一个<code>Javascript</code>形式的函数<code>FindProxyForURL(url, host)</code>。这个函数返回一个包含一个或多个访问规则的字符串。用户代理根据这些规则适用一个特定代理或直接访问。当一个代理服务器无法响应时，多个访问规则提供了其他的后备访问方法。<br>浏览器在访问页面以前，首先访问这个<code>PAC</code>文件。<code>PAC</code>文件中的<code>URL</code>可能是手工配置的，也可能是通过网页的网络代理自发协议自动配置的。<br><img src="http://oifogbmox.bkt.clouddn.com/171017-1.png" alt="images"><br>简单的讲，<code>PAC</code>就是一种配置，它能让你的浏览器智能判断哪些网站走代理，哪些不走代理。<br><img src="http://oifogbmox.bkt.clouddn.com/171017-2.png" alt="images"><br><img src="http://oifogbmox.bkt.clouddn.com/171017-3.png" alt="images"></p>
+<h4 id="PAC的优势"><a href="#PAC的优势" class="headerlink" title="PAC的优势"></a>PAC的优势</h4><p>PAC自动代理属于智能判断模式，相比全局代理，它的优点有：</p>
+<ul>
+<li>不影响国内网站的访问速度，防止无意义的绕路</li>
+<li>节省Shadowsocks服务的流量，节省服务器资源</li>
+<li>控制方便</li>
+</ul>
+<h4 id="配置文件语法"><a href="#配置文件语法" class="headerlink" title="配置文件语法"></a>配置文件语法</h4><p>方式一：gfwlist.js文件 rule中添加。<br>方式二：user-rule.txt文件中添加。</p>
+<p>自定义代理规则的设置语法与GFWlist相同，如下：</p>
+<ul>
+<li>通配符支持。比如<code>*.example.com/*</code>实际书写时可省略<code>*</code>， 如<code>.example.com/</code>，和<code>*.example.com/*</code>效果一样。</li>
+<li>正则表达式支持。以<code>\</code>开始和结束，如<code>\[\w]+:\/\/example.com\</code>。</li>
+<li>例外规则<code>@@</code>，如<code>@@*.example.com/*</code>满足<code>@@</code>后规则的地址不使用代理。</li>
+<li>匹配地址开始和结尾<code>|</code>，如<code>|http://example.com</code>、<code>example.com|</code>分别表示以<code>http://example.com</code>开始和以<code>example.com</code>结束的地址。</li>
+<li><code>||</code>标记，如<code>||example.com</code>则<code>http://example.com</code>、<code>https://example.com</code>、<code>ftp://example.com</code>等地址均满足条件。</li>
+<li>注释<code>!</code>， 如<code>!我是注释</code>。</li>
+</ul>
+<blockquote>
+<p>注意：如果改 user-rule.txt 文件，需要 ‘从GFWList更新PAC’</p>
+</blockquote>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[http]]></title>
       <url>/2017/10/15/http/</url>
       <content type="html"><![CDATA[<h4 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h4><p>HTTP超文本传输协议，构建在TCP之上，属于应用层协议。</p>
