@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="Output">
 <meta property="og:description" content=".boxbox{     border: 2px dashed #ddd;     padding: 0 20px;     margin-bottom: 20px;   }   br{     padding: 0;     margin: 0;   }   DOM文档加载的步骤为：1. 解析HTML结构。2. 加载外部脚本和样式表文件。3. 解析并执行脚本代码。4. DOM树构建完成。/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-25T07:59:07.000Z">
+<meta property="og:updated_time" content="2017-11-17T06:17:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="something">
 <meta name="twitter:description" content=".boxbox{     border: 2px dashed #ddd;     padding: 0 20px;     margin-bottom: 20px;   }   br{     padding: 0;     margin: 0;   }   DOM文档加载的步骤为：1. 解析HTML结构。2. 加载外部脚本和样式表文件。3. 解析并执行脚本代码。4. DOM树构建完成。/">
@@ -400,6 +400,16 @@
 
 <div class="boxbox"><br>  <a href="http://caibaojian.com/book/" target="_blank" rel="external">可能有用的学习资料</a><br></div>
 
+<div class="boxbox"><br><br>#### DOM event<br><br><em> mousedown<br>e.bubbles: 是否冒泡 true<br>e.target: 事件对应的 DOM 树顶级元素（最顶端的元素）<br>e.cancelable: 事件是否可以取消 true<br>e.clientX<br>e.clientY
+
+</em> mouseup<br>e.bubbles: true<br>e.target<br>e.cancelable<br><br>—-<br><br><em> mouseover<br>鼠标移动到目标元素上触发 移出不触发 在目标元素上父子节点切换移动也会触发(因为冒泡)<br>e.bubbles: true<br>e.cancelbale: true
+
+</em> mouseout<br>鼠标移出目标元素触发 在目标元素上父子节点切换移动也会触发(因为冒泡)<br>e.bubbles: true<br>e.cancelbale: true<br><br><em> mousemove<br>鼠标只要在目标上（包括子元素）移动就持续触发<br><br>—-
+
+</em> mouseenter<br>鼠标只在移入目标元素时触发<br>e.bubbles: false<br>e.cancelbale: false<br><br><em> mouseleave<br>鼠标只在移出目标元素时触发<br>e.bubbles: false<br>e.cancelbale: false<br><br>—
+
+</em> scroll<br>在document视图或者一个element在滚动的时候，会触发元素的scroll事件。<br>.wrap overflow: scroll width: 100px height: 100px<br>   .box width: 1000px height: 1000px<br>(.wrap).addEventListener(‘scroll’, fn)<br><br>e.bubbles: false<br>e.cancelable: false<br><br>* wheel<br>鼠标在目标元素上 滚轮滚动时触发 方向键或拖动滚动条不触发<br>e.bubbles: true<br>e.cancelbale: true<br><br></div>
+
 
 
 <script>
@@ -410,6 +420,7 @@
     })
   }, false)
 </script>
+
       
     </div>
 
@@ -506,7 +517,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">38</span>
+              <span class="site-state-item-count">40</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -3,6 +3,46 @@
   
     
     <entry>
+      <title><![CDATA[日记]]></title>
+      <url>/2017/11/02/%E6%97%A5%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<p>纪念又是无所事事的一天。。。</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[canvas入门]]></title>
+      <url>/2017/10/28/canvas%E5%85%A5%E9%97%A8/</url>
+      <content type="html"><![CDATA[<h4 id="线条的属性"><a href="#线条的属性" class="headerlink" title="线条的属性"></a>线条的属性</h4><ul>
+<li>lineWidth: 设置线条的宽度</li>
+<li>lineCap: 设置线条两端帽子的样式<br>  ‘butt’(default)<br>  ‘round’: 圆形<br>  ‘square’: 方形</li>
+<li>lineJoin: 设置线条连接的样式<br>  ‘miter’(default): 尖角<pre><code>miterLimit: 设置尖角距离的最大值
+</code></pre>  ‘bevel’: 衔接<br>  ‘round’: 圆角</li>
+</ul>
+<h4 id="图形变换"><a href="#图形变换" class="headerlink" title="图形变换"></a>图形变换</h4><ul>
+<li>位移 translate(x, y) </li>
+<li>旋转 rotate(deg)</li>
+<li>缩放 scale(sx, sy) : 在 x 轴方向进行 sx 的缩放，在 y 轴方向进行 sy 的缩放</li>
+</ul>
+<p>因为变换是级联的（下一次的变换会在上一次的基础上变换）:<br>context.save() // 保存状态<br>context.restore() // 回到之前的保存状态</p>
+<p>变换矩阵:<br>a c e<br>b d f<br>0 0 1</p>
+<p>a,d: 水平，垂直缩放<br>b,c: 水平，垂直倾斜<br>e,f: 水平，垂直位移</p>
+<p>transform(a, b, c, d, e, f)</p>
+<blockquote>
+<p>transform(1, 0, 0, 1, 0, 0) // 单位矩阵</p>
+</blockquote>
+<p>setTransform(a, b, c, d, e, f) // 先重置，再变换</p>
+<h4 id="填充样式"><a href="#填充样式" class="headerlink" title="填充样式"></a>填充样式</h4><p>fillStyle:</p>
+<p>Linear Gradient:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// step1:</span></div><div class="line"><span class="keyword">var</span> grd = context.createLinearGradient(xStart, yStart, xEnd, yEnd) <span class="comment">// 渐变线</span></div><div class="line"></div><div class="line"><span class="comment">// step2:</span></div><div class="line">grd.addColorStop(stop, color)</div><div class="line"><span class="comment">// 渐变线上的关键色</span></div><div class="line"><span class="comment">// stop:位置 [0.0 - 1.0]</span></div><div class="line"><span class="comment">// color: 颜色</span></div></pre></td></tr></table></figure></p>
+<p>Radial Gradient(径向渐变)(圆环)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// step1: </span></div><div class="line"><span class="keyword">var</span> grd = context.createRadialGradient(x0, y0, r0, x1, y1, r1)</div><div class="line"><span class="comment">// x0 y0 r0 : 定义第一个圆的 x y 坐标 和 半径</span></div><div class="line"><span class="comment">// x1 y1 r1 : 定义第二个圆的 x y 坐标 和 半径</span></div><div class="line"></div><div class="line"><span class="comment">// step2: </span></div><div class="line">grd.addColorStop(stop, color)</div></pre></td></tr></table></figure></p>
+<p>createPattern(img, repeat-style):<br>  img: new Image()<br>  repeat-style: no-repeat<br>                repeat-x<br>                repeat-y<br>                repeat</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[crypto-md5]]></title>
       <url>/2017/10/23/crypto-md5/</url>
       <content type="html"><![CDATA[<p>MD5(Message-Digest Algorithm) 是广泛使用的散列函数（又称哈希算法，摘要算法），主要用来确保消息的完整和一致性。常见的应用场景有密码保护、下载文件校验等。</p>
@@ -958,6 +998,16 @@ reflect: 反射
 
 <div class="boxbox"><br>  <a href="http://caibaojian.com/book/" target="_blank" rel="external">可能有用的学习资料</a><br></div>
 
+<div class="boxbox"><br><br>#### DOM event<br><br><em> mousedown<br>e.bubbles: 是否冒泡 true<br>e.target: 事件对应的 DOM 树顶级元素（最顶端的元素）<br>e.cancelable: 事件是否可以取消 true<br>e.clientX<br>e.clientY
+
+</em> mouseup<br>e.bubbles: true<br>e.target<br>e.cancelable<br><br>—-<br><br><em> mouseover<br>鼠标移动到目标元素上触发 移出不触发 在目标元素上父子节点切换移动也会触发(因为冒泡)<br>e.bubbles: true<br>e.cancelbale: true
+
+</em> mouseout<br>鼠标移出目标元素触发 在目标元素上父子节点切换移动也会触发(因为冒泡)<br>e.bubbles: true<br>e.cancelbale: true<br><br><em> mousemove<br>鼠标只要在目标上（包括子元素）移动就持续触发<br><br>—-
+
+</em> mouseenter<br>鼠标只在移入目标元素时触发<br>e.bubbles: false<br>e.cancelbale: false<br><br><em> mouseleave<br>鼠标只在移出目标元素时触发<br>e.bubbles: false<br>e.cancelbale: false<br><br>—
+
+</em> scroll<br>在document视图或者一个element在滚动的时候，会触发元素的scroll事件。<br>.wrap overflow: scroll width: 100px height: 100px<br>   .box width: 1000px height: 1000px<br>(.wrap).addEventListener(‘scroll’, fn)<br><br>e.bubbles: false<br>e.cancelable: false<br><br>* wheel<br>鼠标在目标元素上 滚轮滚动时触发 方向键或拖动滚动条不触发<br>e.bubbles: true<br>e.cancelbale: true<br><br></div>
+
 
 
 <script>
@@ -967,7 +1017,8 @@ reflect: 反射
       dom.removeChild(dom.lastChild)
     })
   }, false)
-</script>]]></content>
+</script>
+]]></content>
       
         
     </entry>
