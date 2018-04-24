@@ -3,9 +3,140 @@
   
     
     <entry>
-      <title><![CDATA[日记]]></title>
-      <url>/2017/11/02/%E6%97%A5%E8%AE%B0/</url>
-      <content type="html"><![CDATA[<p>纪念又是无所事事的一天。。。</p>
+      <title><![CDATA[正则demo]]></title>
+      <url>/2018/04/02/%E6%AD%A3%E5%88%99demo/</url>
+      <content type="html"><![CDATA[<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'中国不好&lt;span style=""&gt;中国好&lt;/span&gt;中国&lt;span&gt;中国good&lt;/span&gt;中国垃圾'</span></div><div class="line">str.replace(<span class="regexp">/&lt;span.*?&lt;\/span&gt;|中国/g</span>, a =&gt; a.startsWith(<span class="string">'&lt;span'</span>) ? a : <span class="string">'美国'</span>)</div><div class="line"><span class="comment">// 美国不好&lt;span style=""&gt;中国好&lt;/span&gt;美国&lt;span&gt;中国good&lt;/span&gt;美国垃圾</span></div><div class="line"><span class="comment">// .*? 非贪婪模式</span></div></pre></td></tr></table></figure>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[interview-other]]></title>
+      <url>/2018/03/21/interview-other/</url>
+      <content type="html"><![CDATA[<ul>
+<li><p>let和var区别<br>var 作用域为该语句所在的函数内，且存在变量提升<br>let 作用域为该语句所在的代码块内，不存在变量提升，且不允许重复声明</p>
+<p>为什么var可以重复声明？<br>var a;<br>a = 2<br>编译器在执行的时候（从左往右）遇到 var a; 会询问当前作用域中是否已经存在叫 a 的变量<br>如果不存在，则让作用域声明一个新的变量 a , 若已存在，则忽略 var 继续向下编译<br>当遇到 a = 2 时同样会询问在当前作用域下是否有变量 a ，若存在，则 a 赋值为 2 （由于<br>第一步编译器忽略重复声明的 var，且作用域中已经有 a ，所以重复声明会发生值得覆盖而并不会报错）<br>若不存在，则顺着作用域链向上查找，若最终找到了变量a则将其赋值2，若没有找到，则让作用域声明一<br>个变量a并赋值为2。</p>
+</li>
+<li><p>CommonJs 中的 require/exports 和 ES6 中的 import/export 区别<br>主要是运行机制的不同</p>
+<ol>
+<li>CommonJs 模块的重要特性是加载时执行，即脚本代码在 require 的时候，就会全部执行。<br>一旦出现某个模块被 ‘循环加载‘，就只输出已经执行部分，还未执行的部分不会输出<br>a依赖b b依赖a 当a执行跳到b，在b运行时到该require(a)语句时，它返回的只是a已经执行过的那部分结果的返回（module.exports）<br><a href="http://www.ruanyifeng.com/blog/2015/11/circular-dependency.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2015/11/circular-dependency.html</a></li>
+<li><p>ES6 模块是动态引用，不存在缓存值的问题。通过import去加载的时候，不会去执行模块，而只是生成一个引用。<br>多个模块 同时 import 了同一个文件（export了一个对象），改文件的代码只会执行一次，所有拿到的都是同一个对象。</p>
+</li>
+<li><p>import/export 最终都是编译为 require/exports 来执行的。</p>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><p>怎么判断两个对象是否相等<br>JSON.stringify(obj)==JSON.stringify(obj2);//true<br>但是如果属性的位置不一致就不行了</p>
+</li>
+<li><p>项目做过哪些性能优化</p>
+<ol>
+<li>减少 http 请求</li>
+<li>减少 dns 查询</li>
+<li>使用 cdn</li>
+<li>避免重定向</li>
+<li>图片懒加载</li>
+<li>减少 dom 元素数量</li>
+<li>减少 dom 操作</li>
+</ol>
+</li>
+</ul>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[aikeshi-summary]]></title>
+      <url>/2018/03/19/aikeshi-summary/</url>
+      <content type="html"><![CDATA[<ul>
+<li>axios<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">defaultHeaders = &#123;</div><div class="line">  Accept: <span class="string">'application/json, text/plain, */*; charset=utf-8'</span>,</div><div class="line">  <span class="string">'Content-Type'</span>: <span class="string">'application/json; charset=unf-8'</span>,</div><div class="line">  Pragma: <span class="string">'no-cache'</span>,</div><div class="line">  <span class="string">'Cache-Control'</span>: <span class="string">'no-cache'</span>,</div><div class="line">&#125;</div><div class="line"><span class="built_in">Object</span>.assign(axios.defaults.headers.common, defaultHeaders)</div><div class="line"><span class="keyword">const</span> methods = [<span class="string">'get'</span>, <span class="string">'post'</span>, <span class="string">'put'</span>, <span class="string">'delete'</span>]</div><div class="line"><span class="keyword">const</span> http = &#123;&#125;</div><div class="line"><span class="comment">// 统一外部的调用 方式</span></div><div class="line">methods.forEach(<span class="function"><span class="params">method</span> =&gt;</span> &#123;</div><div class="line">  http[method] = axios[method].bind(axios)</div><div class="line">&#125;)</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> http</div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> addRequestInterceptor =</div><div class="line">axios.interceptors.request.use.bind(axios.interceptors.request)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> addResponseInterceptor =</div><div class="line">axios.interceptors.response.use.bind(axios.interceptors.response)</div><div class="line"></div><div class="line"></div><div class="line">install(Vue) &#123;</div><div class="line">  Vue.prototype.http = http</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[interview]]></title>
+      <url>/2018/03/19/interview/</url>
+      <content type="html"><![CDATA[<ul>
+<li><p>Q: html中title属性和alt属性的区别？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;img src=&quot;#&quot; alt=&quot;alt信息&quot; title=&quot;title信息&quot; /&gt;</div><div class="line">// 当图片不输出信息的时候，会显示alt信息 鼠标放上去会出现title信息</div><div class="line">// 当图片正常输出的时候，不会出现alt信息，鼠标放上去会出现title信息</div></pre></td></tr></table></figure>
+</li>
+<li><p>Q: ES5的继承和ES6的继承有什么区别？<br>ES5的继承实质上是先创建子类的实例对象，然后再将父类的方法添加到this上。<br>ES6的继承机制完全不同，实质上是先创建父类的实例对象this（所以必须先调用父类的super()方法），然后再用子类的构造函数修改this。</p>
+</li>
+<li><p>Q: 垂直居中<br><a href="https://www.cnblogs.com/zhouhuan/p/vertical_center.html" target="_blank" rel="external">https://www.cnblogs.com/zhouhuan/p/vertical_center.html</a></p>
+</li>
+<li><p>router.push 和 location.href 的区别<br>前者改变的是 hash 或 history.pushState() 再根据对应的事件去触发<br>后者是直接页面跳转（页面刷新，hash的时候不刷新）</p>
+</li>
+<li><p>菜单下拉列表<br>position: absoulte;<br>transform: scaley(0) // 指定Y轴（垂直方向）的缩放<br>transform-origin: 0 0 // X轴的动画起始位置 Y轴的动画起始位置<br>transition: all 0.5s</p>
+<p>hover: transform: scaley(1)</p>
+</li>
+</ul>
+<p>require.js</p>
+<p>按需加载</p>
+<p>vue<br>created之前 将数据可响应式<br>mounted之前 编译</p>
+<p>$nextTick</p>
+<p>array 改下标不能监听到 原因</p>
+<p>$set</p>
+<p>css<br>实现三角形</p>
+<p>Array.isArray</p>
+<p>单例</p>
+<p>vue不能检测数组</p>
+<ol>
+<li>length 属性不能 Object.defineProperty</li>
+<li>vue下索引也不允许更新，因为length = 5的数组，未必索引就有4，这个索引(属性)</li>
+</ol>
+<p>defineProperty<br>  configurable: 可配置<br>    默认false, 为true时表示 该属性描述符才能被改变 和 该属性能被删除<br>  enumerable: 可枚举<br>    默认false, 为true时才可枚举<br>  value: 该属性对应的值<br>    默认undefined<br>  writable: 可写<br>    默认fasle，为true时才能被赋值<br>  get: getter方法<br>    默认undefined 该返回值用作属性值<br>  set: setter方法<br>    默认undefined</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[mouse Event]]></title>
+      <url>/2017/11/17/mouse-Event/</url>
+      <content type="html"><![CDATA[<ul>
+<li>mousedown</li>
+</ul>
+<p>e.bubbles: 是否冒泡 true<br>e.target: 事件对应的 DOM 树顶级元素（最顶端的元素）<br>e.cancelable: 事件是否可以取消 true<br>e.clientX<br>e.clientY</p>
+<ul>
+<li>mouseup</li>
+</ul>
+<p>e.bubbles: true<br>e.target<br>e.cancelable</p>
+<hr>
+<ul>
+<li>mouseover</li>
+</ul>
+<p>鼠标移动到目标元素上触发 移出不触发 在目标元素上父子节点切换移动也会触发(因为冒泡)<br>e.bubbles: true<br>e.cancelbale: true</p>
+<ul>
+<li>mouseout</li>
+</ul>
+<p>鼠标移出目标元素触发 在目标元素上父子节点切换移动也会触发(因为冒泡)<br>e.bubbles: true<br>e.cancelbale: true</p>
+<ul>
+<li>mousemove</li>
+</ul>
+<p>鼠标只要在目标上（包括子元素）移动就持续触发</p>
+<hr>
+<ul>
+<li>mouseenter</li>
+</ul>
+<p>鼠标只在移入目标元素时触发<br>e.bubbles: false<br>e.cancelbale: false</p>
+<ul>
+<li>mouseleave</li>
+</ul>
+<p>鼠标只在移出目标元素时触发<br>e.bubbles: false<br>e.cancelbale: false</p>
+<hr>
+<ul>
+<li>scroll</li>
+</ul>
+<p>在document视图或者一个element在滚动的时候，会触发元素的scroll事件。<br>e.bubbles: false<br>e.cancelable: false<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.wrap overflow: scroll width: 100px height: 100px </div><div class="line">   .box width: 1000px height: 1000px</div><div class="line">(.wrap).addEventListener(&apos;scroll&apos;, fn)</div></pre></td></tr></table></figure></p>
+<ul>
+<li>wheel</li>
+</ul>
+<p>鼠标在目标元素上 滚轮滚动时触发 方向键或拖动滚动条不触发<br>e.bubbles: true<br>e.cancelbale: true</p>
 ]]></content>
       
         
@@ -997,17 +1128,6 @@ reflect: 反射
 <div class="boxbox"><br>  绝对定位元素的水平垂直居中：<br>  way1: 设置50%<br>  <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">margin-left</span>: -<span class="number">50px</span>;</div><div class="line">  <span class="attribute">margin-top</span>: -<span class="number">50px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br><br>  way2: 利用绝对定位元素的自动伸缩特性<br>  <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">right </span>:<span class="number">0</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">margin</span>: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br><br></div>
 
 <div class="boxbox"><br>  <a href="http://caibaojian.com/book/" target="_blank" rel="external">可能有用的学习资料</a><br></div>
-
-<div class="boxbox"><br><br>#### DOM event<br><br><em> mousedown<br>e.bubbles: 是否冒泡 true<br>e.target: 事件对应的 DOM 树顶级元素（最顶端的元素）<br>e.cancelable: 事件是否可以取消 true<br>e.clientX<br>e.clientY
-
-</em> mouseup<br>e.bubbles: true<br>e.target<br>e.cancelable<br><br>—-<br><br><em> mouseover<br>鼠标移动到目标元素上触发 移出不触发 在目标元素上父子节点切换移动也会触发(因为冒泡)<br>e.bubbles: true<br>e.cancelbale: true
-
-</em> mouseout<br>鼠标移出目标元素触发 在目标元素上父子节点切换移动也会触发(因为冒泡)<br>e.bubbles: true<br>e.cancelbale: true<br><br><em> mousemove<br>鼠标只要在目标上（包括子元素）移动就持续触发<br><br>—-
-
-</em> mouseenter<br>鼠标只在移入目标元素时触发<br>e.bubbles: false<br>e.cancelbale: false<br><br><em> mouseleave<br>鼠标只在移出目标元素时触发<br>e.bubbles: false<br>e.cancelbale: false<br><br>—
-
-</em> scroll<br>在document视图或者一个element在滚动的时候，会触发元素的scroll事件。<br>.wrap overflow: scroll width: 100px height: 100px<br>   .box width: 1000px height: 1000px<br>(.wrap).addEventListener(‘scroll’, fn)<br><br>e.bubbles: false<br>e.cancelable: false<br><br>* wheel<br>鼠标在目标元素上 滚轮滚动时触发 方向键或拖动滚动条不触发<br>e.bubbles: true<br>e.cancelbale: true<br><br></div>
-
 
 
 <script>
